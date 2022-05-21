@@ -2,7 +2,6 @@
 *.bcf
 *.idx
 *.log
-*.pdf
 *.ptc
 *.xml
 *.gz
