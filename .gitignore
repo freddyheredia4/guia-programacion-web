@@ -1,0 +1,13 @@
+*.aux
+*.bcf
+*.idx
+*.log
+*.pdf
+*.ptc
+*.xml
+*.gz
+*.toc
+*.bbl
+*.blg
+*.ilg
+*.idn
