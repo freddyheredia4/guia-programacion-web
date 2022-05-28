@@ -375,9 +375,71 @@ El tipo de cuerpo de la solicitud se indica mediante el encabezado Content-Type.
 	\label{fig:super}
 \end{figure}
 
-\subsection{Status}
+\subsubsection{PUT}
+El método de solicitud HTTP PUT crea un nuevo recurso o reemplaza una representación del recurso de destino con la carga útil de la solicitud.
+
+La diferencia entre PUT y POST es que PUT es idempotente: llamarlo una o varias veces sucesivamente tiene el mismo efecto (eso no es un efecto secundario), mientras que las sucesivas solicitudes POST idénticas pueden tener efectos adicionales, como realizar un pedido varias veces.
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{put.png}
+	\caption{PUT}
+	\label{fig:super}
+\end{figure}
+
+\subsubsection{DELETE}
+El método DELETE borra un recurso en específico.
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{delete.png}
+	\caption{DELETE}
+	\label{fig:super}
+\end{figure}
+
+\subsubsection{PATCH}
+El método PATCH  es utilizado para aplicar modificaciones parciales a un recurso.\\
+PATCH es algo análogo al concepto de "actualización" que se encuentra en CRUD (en general, HTTP es diferente a CRUD y no se deben confundir los dos).
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{patch.png}
+	\caption{PATHC}
+	\label{fig:super}
+\end{figure}
+
+
+\begin{remark}
+Un método HTTP es seguro si no altera el estado del servidor. En otras palabras, un método es seguro si conduce a una operación de solo lectura. Varios métodos HTTP comunes son seguros: GET, HEAD u OPTIONS. Todos los métodos seguros también son idempotentes, pero no todos los métodos idempotentes son seguros. Por ejemplo, PUT y DELETE son idempotentes pero inseguros.
+\end{remark}
+
+\begin{remark}
+Una respuesta almacenable en caché es una respuesta HTTP que se puede almacenar en caché, que se almacena para recuperarla y usarla más tarde, guardando una nueva solicitud en el servidor. No todas las respuestas HTTP se pueden almacenar en caché
+\end{remark}
+
+\begin{remark}
+Un método HTTP es idempotente si se puede realizar una solicitud idéntica una o varias veces seguidas con el mismo efecto y dejando el servidor en el mismo estado. En otras palabras, un método idempotente no debería tener efectos secundarios (excepto para llevar estadísticas). Implementados correctamente, los métodos GET, HEAD, PUT y DELETE son idempotentes, pero no el método POST. Todos los métodos seguros también son idempotentes.
+\end{remark}
+
+\subsection{HTTP response status codes}
+
+Los códigos de estado de respuesta HTTP indican si una solicitud HTTP específica se completó con éxito. Las respuestas se agrupan en cinco clases:
+
+\begin{enumerate}
+	\item Respuestas informativas (100–199)
+	\item Respuestas exitosas (200–299)
+	\item Mensajes de redirección (300–399)
+	\item Respuestas de error del cliente (400–499)
+	\item Respuestas de error del servidor (500–599)
+\end{enumerate}
+
+\subsubsection{Respuestas informativas }
+
+\begin{itemize}
+	\item 100 Continue: indica que todo está bien hasta el momento y que el cliente debe continuar con la solicitud o ignorarla si ya finalizó.
+	\item 101 Protocolos de conmutación: este código se envía en respuesta a un encabezado de solicitud de actualización del cliente e indica el protocolo al que se está cambiando el servidor.
+	\item 102 Procesamiento (WebDAV): Este código indica que el servidor ha recibido y está procesando la solicitud, pero aún no hay respuesta disponible.
+\end{itemize}
+
 \subsection{URI - URL}
-\subsection{Headers}
+
 
 \section{Modelo de Objetos de Documento - DOM}
 
