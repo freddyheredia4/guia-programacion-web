@@ -31,9 +31,6 @@ La siguiente guía tiene como objetivo presentar de manera sistemática los cont
 		\end{tabular}
 \end{center}
 
-
-\section{Lo que aprenderás}
-
 \section{El origen} \index{El origen}
 
 \cite{sl}Aunque los inicios de Internet se remontan a los años setenta, no ha sido hasta los años noventa cuando, gracias a la Web, se ha extendido su uso por todo el mundo. En pocos años la Web ha evolucionado enormemente: se ha pasado de páginas sencillas, con pocas imágenes y contenidos estáticos a páginas complejas con contenidos dinámicos que provienen de bases de datos, lo que permite la creación de "aplicaciones web".
@@ -935,3 +932,57 @@ https://www.typescriptlang.org/cheatsheets
 \subsection{Temas}
 \subsection{Menús}
 \section{Ramificación GIT}
+
+\section{Localización e Internacionalización}
+
+\cite{w3}¿Qué significan los términos "internacionalización" y "localización" y cómo se relacionan?
+
+Ofrecemos aquí algunas descripciones generales, de alto nivel, que reflejan el modo en que tendemos a utilizar estos términos en el sitio del W3C dedicado a la internacionalización.
+
+\subsection{Localización}
+
+Se entiende por localización la adaptación de un producto, una aplicación o el contenido de un documento con el fin de adecuarlos a las necesidades (lingüísticas, culturales u otras) de un mercado destinatario concreto (una "localidad" o "local" [locale]).
+
+\begin{remark}
+La palabra localización a veces se escribe "l10n", donde 10 es la cantidad de letras entre la ele y la ene.
+\end{remark}
+
+
+Aunque se la considera a menudo sinónimo de traducción de la interfaz de usuario y de la documentación, la localización suele ser un asunto considerablemente más complejo, que puede implicar la adaptación del contenido en relación con:
+
+\begin{enumerate}
+	\item formatos numéricos, de fecha y de hora;
+	\item uso de símbolos de moneda;
+	\item uso del teclado;
+	\item algoritmos de comparación y ordenamiento;
+	\item símbolos, iconos y colores;
+	\item texto y gráficos que contengan referencias a objetos, acciones o ideas que, en una cultura dada, puedan ser objeto de mala interpretación o considerados ofensivos;
+	\item diferentes exigencias legales;
+	\item y muchas otras cuestiones.
+\end{enumerate}
+
+La localización puede requerir incluso una reelaboración exhaustiva de la lógica, el diseño visual o la presentación, si la forma de hacer negocios (por ejemplo, las normas contables) o el paradigma aceptado de aprendizaje (por ejemplo, énfasis en el individuo o en el grupo) en la localidad de destino difieren mucho en relación con la cultura originaria.
+
+\subsection{Internacionalización}
+
+Existen diferentes definiciones para la palabra internacionalización. La que damos aquí es una definición operativa de alto nivel para usar con los materiales de la Actividad de internacionalización del W3C. Algunas personas utilizan otros términos para referirse al mismo concepto, por ejemplo, "globalización".
+
+La internacionalización es el diseño y desarrollo de un producto, una aplicación o el contenido de un documento de modo tal que permita una fácil localización con destino a audiencias de diferentes culturas, regiones o idiomas.
+\begin{remark}
+	La palabra internacionalización a veces se escribe "i18n", donde 18 es la cantidad de letras entre la i y la ene.
+\end{remark}
+
+La internacionalización generalmente implica:
+
+\begin{enumerate}
+	\item Un modo de diseño y desarrollo que elimine obstáculos a la localización o la distribución internacional. Esto incluye cuestiones tales como (entre otras) usar Unicode o asegurar, allí donde corresponda, un correcto tratamiento de las codificaciones de caracteres anticuadas; controlar la concatenación de cadenas; o evitar que la programación dependa de valores de cadenas pertenecientes a la interfaz de usuario.
+	\item Habilitar características que tal vez no sean usadas hasta el momento de la localización. Por ejemplo, añadir en la DTD etiquetas para habilitar el texto bidireccional o la identificación de idiomas. O hacer la CSS compatible con texto vertical u otras características tipográficas ajenas al alfabeto latino.
+	\item Preparar el código para hacer frente a las preferencias locales, regionales, lingüísticas o culturales. Por lo general, esto supone incorporar características y datos de localización predefinidos a partir de bibliotecas existentes o de las preferencias del usuario. Algunos ejemplos son: formatos de fecha y hora, calendarios locales, formatos y sistemas de números, ordenamiento y presentación de listas, uso de nombres personales y formas de tratamiento, etc.
+	\item Separar del código o contenido fuente los elementos localizables, de modo que puedan cargarse o seleccionarse alternativas localizadas según determinen las preferencias internacionales del usuario.
+\end{enumerate}
+
+Obsérvese que esta lista no incluye necesariamente la localización del contenido, la aplicación o el producto hacia otro idioma; se trata más bien de prácticas de diseño y desarrollo que facilitan esa migración en el futuro, pero que también pueden tener una utilidad considerable aunque la localización jamás se produzca.
+
+La internacionalización influye considerablemente en la facilidad de localización del producto. Obviamente, resulta mucho más difícil y demanda mucho más tiempo adaptar retrospectivamente un producto centrado en un idioma y cultura particulares que diseñarlo desde un primer momento con la intención de presentarlo mundialmente. (Piénsese en el Y2K y todo lo que demandó tratar de "deshacer" la opción por campos de fecha de dos caracteres, basada en el supuesto de que se interpretarían siempre como "19xx").
+
+De modo que, en condiciones ideales, la internacionalización se da como un paso fundamental en el proceso de diseño y desarrollo, más que como un agregado posterior que, a menudo, puede implicar un difícil y costoso proceso de reingeniería.
