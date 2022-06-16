@@ -438,14 +438,106 @@ Los códigos de estado de respuesta HTTP indican si una solicitud HTTP específi
 	\item 102 Procesamiento (WebDAV): Este código indica que el servidor ha recibido y está procesando la solicitud, pero aún no hay respuesta disponible.
 \end{itemize}
 
-\subsection{URI - URL}
+\subsection{URL - URI}
 
+
+La «Uniform Resource Locator» (URL o Localizadora Uniforme de Recursos en Español) es una cadena de texto que especifica dónde se puede encontrar un recurso (como una página web, una imagen o un video) en Internet.
+
+En el contexto de HTTP, las URLs se denominan "dirección web" o "enlace". Tu navegador muestra las URLs en su barra de direcciones, por ejemplo: https://developer.mozilla.org — Algunos navegadores muestran solo la parte de una URL después de "//", es decir, el Nombre de dominio.
+
+Las URLs también se pueden utilizar para la transferencia de archivos (FTP), correos electrónicos (SMTP) y otras aplicaciones.
+
+Un URI (Identificador Uniforme de Recursos de sus siglas en inglés: Uniform Resource Identifier) es una cadena que se refiere a un recurso. Los más comunes son URLs, que identifican el recurso dando su ubicación en la Web. URNs (en-US), por el contrario, se refiere a un recurso por un nombre, en un espacio de nombres determinados, como el ISBN(International Standard Book Number) de un libro.
+
+\url{https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_URL}
 
 \section{Modelo de Objetos de Documento - DOM}
 
-\section{Gestor de contenidos}
+El DOM (Document Object Model en español Modelo de Objetos del Documento) es una API definida para representar e interactuar con cualquier documento HTML o XML. El DOM es un modelo de documento que se carga en el navegador web y que representa el documento como un árbol de nodos, en donde cada nodo representa una parte del documento (puede tratarse de un elemento, una cadena de texto o un comentario).
+
+\begin{remark}
+Una Interfaz de Programación de Aplicaciones (API, por sus siglas en inglés) define un conjunto de directivas que pueden ser usadas para tener una pieza de software funcionando con algunas otras.
+\end{remark}
+
+El DOM es una de las APIs más usadas en la Web, pues permite ejecutar código en el navegador para acceder e interactuar con cualquier nodo del documento. Estos nodos pueden crearse, moverse o modificarse. Pueden añadirse a estos nodos manejadores de eventos (event listeners en inglés) que se ejecutarán/activarán cuando ocurra el evento indicado en este manejador.
+
+El DOM surgió a partir de la implementación de JavaScript en los navegadores. A esta primera versión también se la conoce como DOM 0 o "Legacy DOM". Hoy en día el grupo WHATWG es el encargado de actualizar el estándar de DOM.
+
 
 \section{REST}
+
+El término "Transferencia de Estado Representacional" (REST) representa un conjunto de características de diseño de arquitecturas software que aportan confiabilidad, eficiencia y escalibilidad a los sistemas distribuidos. Un sistema es llamado RESTful cuando se ajusta a estas características.
+
+La idea básica de REST es que un recurso, e.j. un documento, es transferido con su estado y su relaciones (hipertexto) mediante formatos y operaciones estandarizadas bien definidas.
+
+Como HTTP, el protocolo estandar de la Web, también transfiere documentos e hipertexto, las APIs HTTP a veces son llamadas APIs RESTful, servicios RESTful, o simplemente servicios REST, aunque no se ajusten del todo a la deficinición de REST. Los principiantes pueden pensar que una API REST es un servicio HTTP que puede ser llamado mediante librerias y herramientas web estandar.
+
+Una API de REST, o API de RESTful, es una interfaz de programación de aplicaciones (API o API web) que se ajusta a los límites de la arquitectura REST y permite la interacción con los servicios web de RESTful. El informático Roy Fielding es el creador de la transferencia de estado representacional (REST).
+
+Las API son conjuntos de definiciones y protocolos que se utilizan para diseñar e integrar el software de las aplicaciones.Suele considerarse como el contrato entre el proveedor de información y el usuario, donde se establece el contenido que se necesita por parte del consumidor (la llamada) y el que requiere el productor (la respuesta).Por ejemplo, el diseño de una API de servicio meteorológico podría requerir que el usuario escribiera un código postal y que el productor diera una respuesta en dos partes: la primera sería la temperatura máxima y la segunda, la mínima.
+
+En otras palabras, las API le permiten interactuar con una computadora o un sistema para obtener datos o ejecutar una función, de manera que el sistema comprenda la solicitud y la cumpla. 
+
+Imagínelas como si fueran los mediadores entre los usuarios o clientes y los recursos o servicios web que quieren obtener. Con ellas, las empresas pueden compartir recursos e información mientras conservan la seguridad, el control y la autenticación, lo cual les permite determinar el contenido al que puede acceder cada usuario. 
+
+Otra ventaja de las API es que usted no necesita saber cómo se recibe el recurso ni de dónde proviene.
+
+REST no es un protocolo ni un estándar, sino más bien un conjunto de límites de arquitectura. Los desarrolladores de las API pueden implementarlo de distintas maneras.
+
+Cuando el cliente envía una solicitud a través de una API de RESTful, esta transfiere una representación del estado del recurso requerido a quien lo haya solicitado o al extremo. La información se entrega por medio de HTTP en uno de estos formatos: JSON (JavaScript Object Notation), HTML, XLT, Python, PHP o texto sin formato. JSON es el lenguaje de programación más popular, ya que tanto las máquinas como las personas lo pueden comprender y no depende de ningún lenguaje, a pesar de que su nombre indique lo contrario. 
+
+También es necesario tener en cuenta otros aspectos. Los encabezados y los parámetros también son importantes en los métodos HTTP de una solicitud HTTP de la API de RESTful, ya que contienen información de identificación importante con respecto a los metadatos, la autorización, el identificador uniforme de recursos (URI), el almacenamiento en caché, las cookies y otros elementos de la solicitud. Hay encabezados de solicitud y de respuesta, pero cada uno tiene sus propios códigos de estado e información de conexión HTTP.
+
+Para que una API se considere de RESTful, debe cumplir los siguientes criterios:
+
+Arquitectura cliente-servidor compuesta de clientes, servidores y recursos, con la gestión de solicitudes a través de HTTP.
+Comunicación entre el cliente y el servidor sin estado, lo cual implica que no se almacena la información del cliente entre las solicitudes de GET y que cada una de ellas es independiente y está desconectada del resto.
+Datos que pueden almacenarse en caché y optimizan las interacciones entre el cliente y el servidor.
+Una interfaz uniforme entre los elementos, para que la información se transfiera de forma estandarizada. Para ello deben cumplirse las siguientes condiciones:
+Los recursos solicitados deben ser identificables e independientes de las representaciones enviadas al cliente.
+El cliente debe poder manipular los recursos a través de la representación que recibe, ya que esta contiene suficiente información para permitirlo.
+Los mensajes autodescriptivos que se envíen al cliente deben contener la información necesaria para describir cómo debe procesarla.
+Debe contener hipertexto o hipermedios, lo cual significa que cuando el cliente acceda a algún recurso, debe poder utilizar hipervínculos para buscar las demás acciones que se encuentren disponibles en ese momento.
+Un sistema en capas que organiza en jerarquías invisibles para el cliente cada uno de los servidores (los encargados de la seguridad, del equilibrio de carga, etc.) que participan en la recuperación de la información solicitada.
+Código disponible según se solicite (opcional), es decir, la capacidad para enviar códigos ejecutables del servidor al cliente cuando se requiera, lo cual amplía las funciones del cliente. 
+Si bien la API de REST debe cumplir todos estos parámetros, resulta más fácil de usar que un protocolo definido previamente, como SOAP (protocolo simple de acceso a objetos), el cual tiene requisitos específicos, como la mensajería XML y la seguridad y el cumplimiento integrados de las operaciones, que lo hacen más lento y pesado. 
+
+Por el contrario, REST es un conjunto de pautas que pueden implementarse según sea necesario. Por esta razón, las API de REST son más rápidas y ligeras, cuentan con mayor capacidad de ajuste y, por ende, resultan ideales para el Internet de las cosas (IoT) y el desarrollo de aplicaciones para dispositivos móviles. 
+
+\url{https://www.redhat.com/es/topics/api/what-is-a-rest-api}
+
+
+
+\section{Gestor de contenidos}
+
+\cite{mdn}Un sistema de gestión de contenidos o CMS es un programa informático que permite a los usuarios publicar, organizar, cambiar o eliminar diferentes tipos de contenido como texto, imágenes incrustadas, vídeo, audio y código interactivo.
+
+\cite{wiki}Cuenta con una interfaz que controla una o varias bases de datos donde se aloja el contenido del sitio web. El sistema permite manejar de manera independiente el contenido y el diseño. Así, es posible manejar el contenido y darle en cualquier momento un diseño distinto al sitio web sin tener que darle formato al contenido de nuevo, además de permitir la fácil y controlada publicación en el sitio a varios editores. Un ejemplo clásico es el de editores que cargan el contenido al sistema y otro de nivel superior (moderador o administrador) que permite que estos contenidos sean visibles a todo el público (los aprueba).
+
+\subsection{Características de un CMS}
+Los sistemas de gestión de contenidos se definen por las siguientes particularidades, muchas de las cuales son, a su vez, grandes ventajas:
+
+\begin{itemize}
+	\item Uso intuitivo y fácil para simplificar la edición y publicación de contenidos. No se requieren conocimientos de programación.
+	\item Configuración flexible y personalizada a través de múltiples opciones.
+	\item Velocidad y rendimiento elevados gracias a su excelente capacidad para el desarrollo de tareas.
+	\item Seguridad presente gracias a opciones como aprobación de contenido, verificación de correo electrónico, historial de login o registro de auditoría, entre otras.
+	\item Medios de soporte para ayudar a los usuarios a la resolución de dudas y problemas.
+\end{itemize}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{cms1.png}
+	\caption{Algunos sistemas gestores de contenido}
+	\label{fig:super}
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{cms2.png}
+	\caption{Otros sistemas gestores de contenido populares}
+	\label{fig:super}
+\end{figure}
 
 \section{Entorno de desarrollo}
 
@@ -472,13 +564,369 @@ get-ExecutionPolicy -list
 
 \section{Frontend}
 \subsection{Frameworks}
-\subsection{Angular}
+
+\cite{wiki}Un entorno de trabajo (del inglés framework), o marco de trabajo es un conjunto estandarizado
+de conceptos, prácticas y criterios para enfocar un tipo de problemática particular que sirve como
+referencia, para enfrentar y resolver nuevos problemas de índole similar.
+En el desarrollo de software, un entorno de trabajo es una estructura conceptual y tecnológica
+de asistencia definida, normalmente, con artefactos o módulos concretos de software, que puede
+servir de base para la organización y desarrollo de software. Típicamente, puede incluir soporte
+de programas, bibliotecas, y un lenguaje interpretado, entre otras herramientas, para así ayudar a
+desarrollar y unir los diferentes componentes de un proyecto.
+Representa una arquitectura de software que modela las relaciones generales de las entidades del
+dominio, y provee una estructura y especial metodología de trabajo, la cual extiende o utiliza las
+aplicaciones del dominio.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{frontend-frameworks-social.jpg}
+	\caption{Algunos frameworks para frontend}
+	\label{fig:super}
+\end{figure}
+
 \subsection{HTML}
+
+
 \subsection{CSS}
+
+\cite{mdn}CSS (Cascading Style Sheets - en español Hojas de Estilo en Cascadas) es usado para darle estilo y diseño a las páginas Web — por ejemplo, para cambiar la fuente de letra, color, tamaño y el espaciado de tu contenido; dividir en múltiples columnas, o agregar animaciones y otras propiedades decorativas. Este modulo provee un inicio suave para tu ruta de aprendizaje hacia el dominio de CSS con su funcionamiento básico, como luce su sintaxis, y cómo puedes comenzar a utilizarlo y añadir estilo a HTML.
+
+El CSS se puede usar para estilos de texto muy básicos como, por ejemplo, cambiar el color y el tamaño de los encabezados y los enlaces. Se puede utilizar para crear un diseño, como podría ser convertir una columna de texto en una composición con un área de contenido principal y una barra lateral para información relacionada. Incluso se puede usar para crear efectos de animación.
+
+\subsection{Sintaxis del CSS}
+El CSS es un lenguaje basado en reglas: cada usuario define las reglas que especifican los grupos de estilos que van a aplicarse a elementos particulares o grupos de elementos de la página web. Por ejemplo: «Quiero que el encabezado principal de mi página se muestre en letras grandes de color rojo».
+
+El código siguiente muestra una regla CSS muy simple que proporcionaría el estilo descrito en el párrafo anterior:
+
+\begin{lstlisting}
+	h1 {
+		color: red;
+		font-size: 5em;
+	}
+\end{lstlisting}
+
+La regla se abre con un selector (en-US). Este selecciona el elemento HTML que vamos a diseñar. En este caso, diseñaremos encabezados de nivel uno (<h1> (en-US)).
+
+Luego tenemos un conjunto de llaves { }. Entre estas habrá una o más declaraciones, que tomarán la forma de pares de propiedad y valor. Cada par especifica cada una de las propiedades de los elementos seleccionados y el valor que queremos dar a esa propiedad.
+
+Antes de los dos puntos, tenemos la propiedad; y después, el valor. Las propiedades (en-US) CSS admiten diferentes valores, dependiendo de qué propiedad se esté especificando. En el ejemplo anterior, tenemos la propiedad color, que puede tomar varios valores de color. También tenemos la propiedad de font-size, que puede tomar varias unidades de tamaño como valor.
+
+Una hoja de estilo CSS contendrá muchas de estas reglas, escritas una tras otra.
+
+\begin{lstlisting}
+h1 {
+	color: red;
+	font-size: 5em;
+}
+
+p {
+	color: black;
+}
+\end{lstlisting}
+
+Algunos valores se aprenden rápidamente, mientras que otros deberán buscarse. Las páginas de propiedades individuales que hay en el proyecto MDN proporcionan una forma rápida de buscar propiedades y sus valores en caso de olvidarlos o desear saber qué más se puede usar como valor.
+
+\begin{remark}
+Nota: Puedes encontrar enlaces a todas las páginas de las propiedades CSS (junto con otras características CSS) enumeradas en la referencia CSS del proyecto MDN. Alternativamente, deberías acostumbrarte a buscar «mdn css-feature-name» en tu motor de búsqueda favorito siempre que necesites obtener más información sobre una función CSS. Por ejemplo, intenta buscar «mdn color» y «mdn font-size».
+\end{remark}
+
+\url{https://developer.mozilla.org/es/docs/Web/CSS/Reference}
+
+\subsection{Especificaciones CSS}
+
+Todas las tecnologías de estándares web (HTML, CSS, JavaScript, etc.) se definen en extensos documentos denominados especificaciones, publicados por organizaciones de estándares (como W3C (en-US), WHATWG, ECMA (en-US) o Khronos (en-US)) que definen con precisión cómo se supone que deben comportarse esas tecnologías.
+
+El caso de CSS no es diferente: lo desarrolla un grupo del W3C llamado CSS Working Group. Este grupo está compuesto por representantes de proveedores de navegadores y otras compañías interesadas en CSS. También hay otras personas, conocidas como expertos invitados, que actúan como voces independientes y no están vinculados a ninguna organización.
+
+\subsection{Agregar CSS a un documento}
+
+Lo primero que se debe hacer es decirle al documento HTML que hay algunas reglas CSS que queremos que use. Hay tres formas diferentes de aplicar CSS a un documento HTML, sin embargo, por ahora, veremos la forma más habitual y útil de hacerlo: vincular el CSS desde el encabezado del documento.
+
+Crea un archivo en la misma carpeta que tu documento HTML y guárdalo como styles.css. La extensión .css muestra que es un archivo CSS.
+
+Para vincular styles.css a index.html, añade la siguiente línea en algún lugar dentro del <head> del documento HTML:
+
+\begin{lstlisting}
+<link rel="stylesheet" href="styles.css">
+\end{lstlisting}
+
+Este elemento <link> le dice al navegador que hay una hoja de estilo con el atributo rel y la ubicación de esa hoja de estilo como el valor del atributo href
+\begin{remark}
+	El atributo rel indica la relación del documento enlazado con el actual.
+\end{remark}
+
+Puedes determinar múltiples selectores a la vez, separándolos con una coma. Si queremos que todos los párrafos y todos los elementos de la lista sean verdes, el código se verá así:
+
+\begin{lstlisting}
+	p, li {
+		color: green;
+	}
+\end{lstlisting}
+
+\subsection{Añadir una clase}
+Hasta ahora, hemos utilizado elementos cuyo nombre se basa en el nombre de elemento que reciben en HTML. Esto funciona siempre que se desee que todos los elementos de ese tipo tengan el mismo aspecto en el documento. La mayoría de las veces no es el caso, por lo que deberás encontrar una manera de seleccionar un subconjunto de los elementos sin que cambien los demás. La forma más común de hacer esto es añadir una clase al elemento HTML y determinarla.
+\\
+En tu documento HTML, añade al segundo elemento de la lista un atributo de clase. Debería verse así:
+\begin{lstlisting}
+<ul>
+<li>Punto uno</li>
+<li class = "special">Punto dos</li>
+<li>Punto <em>tres</em></li>
+</ul>
+\end{lstlisting}
+En tu CSS, puedes seleccionar una clase special creando un selector que comience con un carácter de punto final. Añade lo siguiente a tu archivo CSS:
+\begin{lstlisting}
+	.special {
+		color: orange;
+		font-weight: bold;
+	}
+\end{lstlisting}
+
+Puedes aplicar la clase special a cualquier elemento de la página que desees que tenga el mismo aspecto que este elemento de lista. Por ejemplo, es posible que desees que el <span> del párrafo también sea naranja y en negrita. 
+
+A veces verás reglas con un selector que enumera el selector de elementos HTML junto con la clase:
+
+\begin{lstlisting}
+	li.special {
+		color: orange;
+		font-weight: bold;
+	}
+\end{lstlisting}
+
+Esta sintaxis significa «determina cualquier elemento li que tenga una clase special». Si hicieras esto, ya no podrías aplicar la clase a un elemento <span> u otro elemento simplemente añadiéndole la clase; tendrías que añadir ese elemento a la lista de selectores:
+
+\begin{lstlisting}
+	li.special,
+	span.special {
+		color: orange;
+		font-weight: bold;
+	}
+\end{lstlisting}
+
+\subsection{Dar formato según la ubicación en un documento}
+Hay momentos en los que querrás que algo se vea diferente en función de dónde esté en el documento. Hay múltiples selectores que pueden hacerlo, pero por ahora veremos solo un par. En nuestro documento hay dos elementos <em>: uno dentro de un párrafo y el otro dentro de un elemento de la lista. Para seleccionar solo un <em> que esté anidado dentro de un elemento <li>, podemos usar un selector llamado combinador descendente, que simplemente toma la forma de un espacio entre otros dos selectores.
+
+\begin{remark}
+Combinador Css de descendiente: (espacio en blanco) o >>
+\end{remark}
+
+\begin{lstlisting}
+	li em {
+		color: rebeccapurple;
+	}
+\end{lstlisting}
+
+Este selector separará cualquier elemento <em> que esté dentro de (un descendiente de) <li>. Entonces, en tu documento de ejemplo, deberías encontrar que el <em> del tercer elemento de la lista es morado, pero el que hay en el párrafo no ha cambiado.
+
+
+Otra cosa que puedes probar es dar formato un párrafo que venga directamente a continuación de un título que esté en el mismo nivel de jerarquía en el HTML. Para hacerlo, coloca un + (un combinador hermano adyacente) entre los selectores.
+
+\begin{lstlisting}
+h1 + p {
+	font-size: 200%;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+<h1>I am a level one heading</h1>
+
+<p>This is a paragraph of text. In the text is a <span>span element</span> 
+and also a <a href="http://example.com">link</a>.</p>
+
+<p>This is the second paragraph. It contains an <em>emphasized</em> element.</p>
+
+<ul>
+<li>Item <span>one</span></li>
+<li>Item two</li>
+<li>Item <em>three</em></li>
+</ul>
+\end{lstlisting}
+
+Salida:
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{css1.png}
+	\caption{Salida de formato según la ubicación}
+	\label{fig:super}
+\end{figure}
+
+\subsection{Dar formato según el estado}
+
+ Un ejemplo sencillo es el estilo de los enlaces. Cuando damos formato a un enlace, necesitamos seleccionar el elemento <a> (anclaje). Tiene diferentes estados dependiendo de si se ha visitado o no, se pasa por encima, o se presiona con el teclado o se hace clic (se activa). Puedes usar CSS para dar formato a estos diferentes estados. El CSS que encontrarás a continuación presenta en color rosa los enlaces que no se han visitado y en verde los que sí.
+ 
+ \begin{lstlisting}
+a:link {
+	color: pink;
+}
+
+a:visited {
+	color: green;
+}
+ \end{lstlisting}
+
+Puedes cambiar la apariencia del enlace, por ejemplo, eliminando el subrayado, lo que se logra mediante la siguiente regla:
+
+ \begin{lstlisting}
+	a:hover {
+		text-decoration: none;
+	}
+\end{lstlisting}
+
+\subsection{Estilos en línea}
+Los estilos en línea son declaraciones CSS que afectan a un solo elemento, contenido dentro de un atributo de style:
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mi experimento CSS</title>
+</head>
+<body>
+<h1 style="color: blue;background-color: yellow;border: 1px solid black;">¡Hola mundo!</h1>
+<p style="color:red;">Este es mi primer ejemplo de CSS</p>
+</body>
+</html>~
+\end{lstlisting}
+
+\begin{remark}
+¡No hagas esto a menos que realmente tengas que hacerlo! Es realmente malo a la hora de realizar el mantenimiento 
+\end{remark}
+
+\subsection{Selectores}
+No se puede hablar de CSS sin mencionar los selectores, de los cuales ya hemos descubierto varios tipos diferentes en la lección Empezar con el CSS. Un selector es, como determinamos, un elemento de nuestro documento HTML para aplicarle estilo. Si los estilos no se aplican correctamente, es probable que el selector no coincida con lo que crees que debería coincidir.
+
+Cada regla CSS comienza con un selector o una lista de selectores que indican al navegador a qué elemento o elementos deben aplicarse dichas reglas. Todos los siguientes son ejemplos de selectores válidos o listas de selectores.
+
+\begin{lstlisting}
+h1
+a:link
+.manythings
+#onething
+*
+.box p
+.box p:first-child
+h1, h2, .intro
+\end{lstlisting}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{cheatsheet-css.png}
+	\caption{Hoja de trucos CSS}
+	\label{fig:super}
+\end{figure}
+
+\subsection{Especificidad}
+A menudo habrá situaciones en las que dos selectores podrían determinar un mismo elemento HTML. Considera la siguiente hoja de estilo, en que definimos una regla con un selector p que establecerá los párrafos en color azul, y también una clase que establecerá los elementos seleccionados en color rojo.
+
+\begin{lstlisting}
+.special {
+	color: red;
+}
+
+p {
+	color: blue;
+}
+\end{lstlisting}
+
+Digamos que en nuestro documento HTML hay un párrafo con una clase special. Ambas reglas podrían aplicarse. ¿Cuál ganará? ¿De qué color crees que será nuestro párrafo?
+
+\begin{lstlisting}
+<p class="special">¿De qué color soy?</p>
+\end{lstlisting}
+
+El lenguaje CSS tiene reglas para controlar cuál ganará en caso de colisión; reciben el nombre de cascada y especificidad. En el siguiente bloque de códigos hemos definido dos reglas para el selector p, pero el párrafo termina siendo de color azul. Esto se debe a que la declaración que lo establece en azul aparece más abajo en la hoja de estilo, y los estilos posteriores anulan a los anteriores. Así funciona la regla de la cascada.
+
+\subsection{@rules}
+Las @rules (leído "at-rules" en inglés) dan al CSS algunas instrucciones sobre cómo comportarse. Algunas @rules son simples, con el nombre de la regla y un valor. Por ejemplo, para importar una hoja de estilo adicional a tu hoja de estilo CSS principal, puedes usar @import:
+
+\begin{lstlisting}
+@import 'styles2.css';
+\end{lstlisting}
+
+Una de las @rules más comunes con las que te encontrarás es @media, que permite usar consultas a medios para aplicar CSS solo cuando se dan ciertas condiciones (por ejemplo, cuando la resolución de la pantalla supera un valor determinado o la anchura supera un valor concreto).
+
+En el CSS que se muestra a continuación, tenemos una hoja de estilo que le da al elemento <body> un color de fondo rosado. Sin embargo, luego usamos @media para crear una sección de nuestra hoja de estilo que solo se aplicará en los navegadores con una ventana gráfica de más de 30em de ancho. Si el navegador es más ancho que 30em, el color de fondo será azul.
+
+\begin{lstlisting}
+body {
+	background-color: pink;
+}
+
+@media (min-width: 30em) {
+	body {
+		background-color: blue;
+	}
+}
+\end{lstlisting}
+
+\subsection{Abreviaturas}
+Algunas propiedades como font, background, padding, border y margin se llaman propiedades abreviadas. Esto se debe a que permiten establecer varios valores de propiedad en una sola línea, lo que ahorra tiempo y ordena el código.
+
+Por ejemplo, esta línea:
+
+\begin{lstlisting}
+/* En propiedades abreviadas con 4 valores, como margin y padding (relleno), los valores se aplican
+según el orden: arriba, derecha, abajo e izquierda (en sentido horario desde la parte superior). También hay otros
+tipos de abreviaturas, como las propiedades abreviadas con 2 valores que establecen el relleno/margen,
+arriba/abajo, y luego izquierda/derecha */
+padding: 10px 15px 15px 5px;
+\end{lstlisting}
+
+Hace lo mismo que todas estas juntas:
+
+\begin{lstlisting}
+padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 15px;
+padding-left: 5px;
+\end{lstlisting}
+
+\subsection{¿Cómo funciona realmente el CSS?}
+
+Cuando un navegador muestra un documento, ha de combinar el contenido con la información de estilo del documento. Procesa el documento en una serie de etapas, que enumeraremos a continuación. Ten en cuenta que este es un modelo muy simplificado de lo que sucede cuando un navegador carga una página web y que cada navegador gestiona el proceso de manera diferente. Pero esto es más o menos lo que sucede.
+
+\begin{itemize}
+	\item El navegador carga el HTML (por ejemplo, lo recibe de la red).
+	\item Convierte el HTML en un DOM (Modelo de objetos del documento). El DOM representa el documento en la memoria del ordenador. Lo explicaremos más detalladamente en la sección siguiente.
+	\item Entonces, el navegador va a buscar la mayor parte de los recursos vinculados al documento HTML, como las imágenes y los videos incrustados... ¡y también el CSS vinculado! JavaScript aparece un poco más adelante en el proceso, pero no vamos a hablar de ello aún para evitar complicar las cosas.
+	\item El navegador analiza el CSS y ordena en diferentes «cubos» las diferentes reglas según el tipo de selector. Por ejemplo, elemento, clase, ID, y así sucesivamente. Para cada tipo de selector que encuentre, calcula qué reglas deben aplicarse y a qué nodos en el DOM se les aplica el estilo según corresponda (este paso intermedio se llama árbol de renderización).
+	\item El árbol de renderización presenta la estructura en que los nodos deben aparecer después de aplicarle las reglas.
+	\item En la pantalla se muestra el aspecto visual de la página (esta etapa se llama pintura).
+	
+	
+\end{itemize}
+El siguiente diagrama ofrece una visión sencilla de este proceso.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{rendering.svg}
+	\caption{Carga del css}
+	\label{fig:super}
+\end{figure}
+
+
 \subsubsection{Frameworks CSS}
+
+material ui GOD
+ERICK JOEL DAMIAN CASIS18:17
+bulma 
+LUIS MAURICIO MATANGO MENDOZA18:17
+next ui
+HENRRY DAVID ALVARADO MALES18:17
+Ant Design
+material dashboard
+prime ng
+Prime React
+Chakra UI
+
+
+
 \subsubsection{Tailwind CSS}
 \subsection{Javascript - ECMAScript}
 \subsection{Typescript}
+https://www.typescriptlang.org/cheatsheets
+
 \subsection{CRUD}
 \subsubsection{Entidades - DTOs}
 \subsubsection{Servicios}
