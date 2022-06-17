@@ -897,10 +897,106 @@ El siguiente diagrama ofrece una visión sencilla de este proceso.
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=1\textwidth]{rendering.svg}
+	\includegraphics[width=1\textwidth]{rendering.png}
 	\caption{Carga del css}
 	\label{fig:super}
 \end{figure}
+
+
+\\
+\url{https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Normal_Flow}
+\url{https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout}
+
+\subsection{Contenido desbordante}
+
+
+El desbordamiento es lo que sucede cuando hay demasiado contenido para caber en un contenedor. En esta guía aprenderá qué es el desbordamiento y cómo gestionarlo.
+
+Todo en CSS es una caja. Puede restringir el tamaño de estos cuadros asignando valores de ancho y alto (o tamaño en línea y tamaño de bloque). El desbordamiento ocurre cuando hay demasiado contenido para caber en una caja. CSS proporciona varias herramientas para administrar el desbordamiento. A medida que avance con el diseño de CSS y escriba CSS, encontrará más situaciones de desbordamiento.
+
+CSS intenta evitar la "pérdida de datos"
+Consideremos dos ejemplos que demuestran el comportamiento predeterminado de CSS cuando hay desbordamiento.
+
+El primer ejemplo es una caja que ha sido restringida estableciendo una altura. Luego agregamos contenido que excede el espacio asignado. El contenido desborda el cuadro y cae en el párrafo siguiente.
+
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{desbordamiento1.png}
+	\caption{Ejemplo desbordamiento}
+	\label{fig:super}
+\end{figure}
+
+El segundo ejemplo es una palabra en un cuadro. La caja se ha hecho demasiado pequeña para la palabra, por lo que se sale de la caja.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{desbordamiento2.png}
+	\caption{Ejemplo desbordamiento}
+	\label{fig:super}
+\end{figure}
+
+Siempre que sea posible, CSS no oculta el contenido. Esto provocaría la pérdida de datos. El problema con la pérdida de datos es que es posible que no lo notes. Es posible que los visitantes del sitio web no se den cuenta. Si el botón de enviar en un formulario desaparece y nadie puede completarlo, ¡esto podría ser un gran problema! En cambio, CSS se desborda de manera visible. Es más probable que vea que hay un problema. En el peor de los casos, un visitante del sitio le informará que el contenido se superpone.
+
+La propiedad de desbordamiento es cómo tomas el control del desbordamiento de un elemento. Es la forma en que le indica al navegador cómo debe comportarse. El valor predeterminado de overflow es visible. Con este valor predeterminado, podemos ver el contenido cuando se desborda.
+
+Para recortar el contenido cuando se desborda, puede establecer desbordamiento: oculto. Esto hace exactamente lo que dice: oculta el desbordamiento. Tenga en cuenta que esto puede hacer que algunos contenidos sean invisibles. Solo debe hacer esto si ocultar contenido no causará problemas.
+
+\begin{lstlisting}
+.box {
+	border: 1px solid #333333;
+	width: 200px;
+	height: 100px;
+	overflow: hidden;
+}
+\end{lstlisting}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{desbordamiento3.png}
+	\caption{Ejemplo desbordamiento}
+	\label{fig:super}
+\end{figure}
+
+Usando overflow: scroll, los navegadores con barras de desplazamiento visibles siempre las mostrarán, incluso si no hay suficiente contenido para desbordar.
+
+\begin{lstlisting}
+.box {
+	overflow: scroll;
+}
+\end{lstlisting}
+
+\begin{remark}
+Para simplemente desplazarse en el eje y, puede usar la propiedad overflow-y, configurando overflow-y: scroll. y overflow-x para desplazarse en el eje de las x
+\end{remark}
+
+\subsection{Normal flow}
+
+Los elementos en las páginas web se presentan de acuerdo con el flujo normal, hasta que hacemos algo que cambie eso. Esta sección explica las bases del flujo normal para aprender como cambiarlo.
+\\
+¿Cómo se presentan por defecto los elementos?
+\\\\
+En primer lugar, se toma de las cajas de cada uno de los elementos el contenido, luego se añade cualquier área de relleno, borde y margen alrededor de ellas; es el modelo de cajas que hemos visto antes.
+\\
+De manera predeterminada, el contenido de un elemento de nivel de bloque es el 100% del ancho de su elemento padre y su altura viene determinada por su contenido. Los elementos en línea tienen su altura y anchura determinados por su contenido. No puedes establecer el ancho o la altura de los elementos en línea, simplemente se ubican dentro del contenido de los elementos de nivel de bloque. Si deseas controlar el tamaño de un elemento en línea de esta manera, debes configurarlo para que se comporte como un elemento de nivel de bloque con display: block; (o incluso, display: inline-block;, que combina características de ambos).
+\\
+Esto explica los elementos individuales, pero ¿qué hay del modo como los elementos interactúan entre sí? El flujo de diseño normal (mencionado en el artículo de introducción al diseño) es el sistema mediante el cual los elementos se colocan en la ventana gráfica del navegador. De manera predeterminada, los elementos de nivel de bloque se presentan en la dirección del flujo del bloque, en función del modo de escritura de los padres (initial: horizontal-tb): cada uno aparecerá en una línea nueva debajo de la última, y estarán separados por cualquier margen que se establezca en ellos. Por lo tanto, en inglés, o en cualquier otro modo de escritura horizontal y de arriba a abajo, los elementos de nivel de bloque se disponen verticalmente.
+\\
+Los elementos en línea se comportan de manera diferente: no aparecen en líneas nuevas; en su lugar, se asientan en la misma línea entre sí y con cualquier contenido de texto adyacente (o envuelto), siempre que tengan espacio dentro del ancho del elemento de nivel de bloque primario. Si no hay espacio, el texto o los elementos que desborden bajarán a la línea siguiente.
+\\
+Si dos elementos adyacentes tienen algún margen configurado y los dos márgenes se tocan, se mantiene el mayor de los dos y el menor desaparece; esto se llama colapso del margen, y ya lo hemos visto antes.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{flujo1.png}
+	\caption{Ejemplo Flujo normal}
+	\label{fig:super}
+\end{figure}
+
+
+\subsubsection{Flexbox}
+
+Flexbox es un método de diseño de página unidimensional para compaginar elementos en filas o columnas. Los elementos de contenido se ensanchan para rellenar el espacio adicional y se encogen para caber en espacios más pequeños. En este artículo expondremos todas sus características básicas.
 
 
 \subsubsection{Frameworks CSS}
