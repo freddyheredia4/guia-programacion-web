@@ -34,7 +34,7 @@ La siguiente guía tiene como objetivo presentar de manera sistemática los cont
 \section{El origen} \index{El origen}
 
 \cite{sl}Aunque los inicios de Internet se remontan a los años setenta, no ha sido hasta los años noventa cuando, gracias a la Web, se ha extendido su uso por todo el mundo. En pocos años la Web ha evolucionado enormemente: se ha pasado de páginas sencillas, con pocas imágenes y contenidos estáticos a páginas complejas con contenidos dinámicos que provienen de bases de datos, lo que permite la creación de "aplicaciones web".
-\\\\
+
 \cite{sl}Internet y la Web han incluido enormemente tanto en el mundo de la informática
 como en la sociedad en general. Si nos centramos en la Web, en poco menos de 10
 años ha transformado los sistemas informáticos: ha roto las barreras físicas (debido a
@@ -42,11 +42,11 @@ la distancia), económicas y lógicas (debido al empleo de distintos sistemas op
 protocolos, etc.) y ha abierto todo un abanico de nuevas posibilidades. Una de las áreas
 que más expansión está teniendo en la Web en los últimos años son las aplicaciones
 web.
-\\\\
+
 \cite{sl}Las aplicaciones web permiten la generación automática de contenido, la creación
 de páginas personalizadas según el perfil del usuario o el desarrollo del comercio electrónico. Además, una aplicación web permite interactuar con los sistemas informáticos de gestión de una empresa, como puede ser gestión de clientes, contabilidad o
 inventario, a través de una página web.
-\\\\
+
 \cite{sl}De forma breve, una aplicación web se puede definir como una aplicación en la cual el usuario por medio de un navegador realiza peticiones a una aplicación remota accesible a través de internet (o a través de una Intranet) y que recibe una respuesta que se muestra en el propio navegador.
 
 \begin{remark}
@@ -57,13 +57,25 @@ inventario, a través de una página web.
 \subsection{Protocolos de internet} \index{Protocolos de internet}
 El éxito de Internet se basa mucho en el empleo de TCP/IP, el conjunto de protocolos de comunicación que permiten el intercambio de información de forma independiente de los sistemas en que ésta se encuentra almacenada. TCP/IP constituye
 la solución problema de heterogeneidad de los sistemas informáticos. El 1 de enero de
-1983, TCP/IP se estableció como el protocolo estándar de comunicación en Internet.\\
+1983, TCP/IP se estableció como el protocolo estándar de comunicación en Internet.
+
 El conjunto de protocolos TCP/IP, también llamado la pila de protocolos
 TCP/IP, incluye una serie de protocolos que se encuentran en el nivel 7 o de aplicación de la arquitectura Open System Interconnection (OSI) y que proporcionan una
-serie de servicios.\\
+serie de servicios.
+
 Como un mismo ordenador puede atender varios servicios, cada servicio se identifica con un número llamado puerto. Por tanto, a cada protocolo le corresponde un
 número de puerto. Los protocolos que se encuentran estandarizados poseen un puerto
 reservado que no puede emplear ningún otro protocolo.
+
+\cite{wiki}El protocolo de control de transmisión (TCP) es, al igual que el protocolo UDP como el SCTP, un protocolo de Internet que está ubicado en la capa de transporte del modelo OSI. El objetivo del protocolo TCP es crear conexiones dentro de una red de datos compuesta por redes de computadoras para intercambiar datos. Además, en cuanto a su funcionamiento, garantiza que los datos serán entregados en su destino sin errores y en el mismo orden en que se transmitieron.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{tcp-udp.png}
+	\caption{Comparativa TCP - UDP}
+	\label{fig:super}
+\end{figure}
+
 
 En el siguiente cuadro se muestran los protocolos del nivel 7 más comunes de Internet
 junto con el número de puerto que emplean.
@@ -81,6 +93,7 @@ junto con el número de puerto que emplean.
 Véa el siguiente vídeo: Guerreros de la red \\
 \url{https://youtu.be/1c2U1R8XXvA}
 \end{remark}
+
 \section{Arquitecturas cliente/servidor} \index{Arquitectura cliente/servidor}
 
 \cite{sl}Las aplicaciones web son un tipo especial de aplicaciones cliente/servidor. Antes de
@@ -103,6 +116,7 @@ La arquitectura cliente/servidor permite la creación de aplicaciones distribuid
 La principal ventaja de esta arquitectura es que facilita la separación de las funciones
 según su servicio, permitiendo situar cada función en la plataforma más adecuada
 para su ejecución. Además, también presenta las siguientes ventajas:
+
 \begin{itemize}
 	\item Las redes de ordenadores permiten que múltiples procesadores puedan ejecutar
 	partes distribuidas de una misma aplicación, logrando concurrencia de procesos.
@@ -115,6 +129,13 @@ para su ejecución. Además, también presenta las siguientes ventajas:
 	\item Posibilita el acceso a los datos independientemente de donde se encuentre el
 usuario.
 \end{itemize}	
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{escalar.jpeg}
+	\caption{Escalamiento horizontal vs vertical}
+	\label{fig:super}
+\end{figure}
 
 \subsection{Separación de funciones}\index{Separación de funciones}
 
@@ -150,13 +171,13 @@ los datos y asegurar la integridad de los datos.
 \subsection{El cliente}
 \cite{mdn}El cliente es cualquier herramienta que actué en representación del usuario para solicitar a
 un servidor web el envío de los recursos que desea obtener mediante HTTP. Esta función es realizada en la mayor parte de los casos por un navegador Web. Hay excepciones, como el caso de programas específicamente usados por desarrolladores para desarrollar y depurar sus aplicaciones. 
-\\
+
 El navegador es siempre el que inicia una comunicación (petición), y el servidor nunca la comienza (hay algunos mecanismos que permiten esto, pero no son muy habituales).  
-\\
+
 Para poder mostrar una página Web, el navegador envía una petición de documento HTML al servidor. Entonces procesa este documento, y envía más peticiones para solicitar scripts, hojas de estilo (CSS), y otros datos que necesite (normalmente vídeos y/o imágenes). El navegador, une todos estos documentos y datos, y compone el resultado final: la página Web. Los scripts, los ejecuta también el navegador, y también pueden generar más peticiones de datos en el tiempo, y el navegador, gestionará y actualizará la página Web en consecuencia. 
-\\
+
 Una página Web, es un documento de hipertexto (HTTP), luego habrá partes del texto en la página que puedan ser enlaces (links) que pueden ser activados (normalmente al hacer click sobre ellos) para hacer una petición de una nueva página Web, permitiendo así dirigir su agente de usuario y navegar por la Web. El navegador, traduce esas direcciones en peticiones de HTTP, e interpretara y procesará las respuestas HTTP, para presentar al usuario la página Web que desea.
-\\
+
 La parte cliente de las aplicaciones web suele estar formada por el código HTML
 que forma la página web más algo de código ejecutable realizado en lenguaje de script
 del navegador (JavaScript o VBScript) o mediante pequeños programas (applets) realizados en Java. También se solían emplear plugins que permiten visualizar otros
@@ -164,7 +185,16 @@ contenidos multimedia (como Macromedia Flash
 ), aunque no se encuentran tan extendidos como las tecnologías anteriores y plantean problemas de incompatibilidad
 entre distintas plataformas. Por tanto, la misión del cliente web es interpretar las
 páginas HTML y los diferentes recursos que contienen (imágenes, sonidos, etc.).
-\\
+
+\newpage
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{cliente.png}
+	\end{center}
+	\caption{Cliente}
+\end{wrapfigure}
+
 Las tecnologías que se suelen emplear para programar el cliente web son:
 
 \begin{itemize}
@@ -172,6 +202,7 @@ Las tecnologías que se suelen emplear para programar el cliente web son:
 	\item CSS
 	\item Javascript
 \end{itemize}
+
 \begin{remark}
 	Cada tecnología puede tener sus variantes.\\
 	WebAssembly es un proyecto prometedor.\\
@@ -179,8 +210,17 @@ Las tecnologías que se suelen emplear para programar el cliente web son:
 \end{remark}
 
 \subsection{El servidor}
+
+\begin{wrapfigure}{l}{0.45\textwidth}
+	\begin{center}
+		\includegraphics[width=0.45\textwidth]{servidor.jpeg}
+	\end{center}
+	\caption{Sala de servidores}
+	\label{wrap-fig:1}
+\end{wrapfigure}
+
 Al otro lado del canal de comunicación, está el servidor, el cual "sirve" los datos que ha pedido el cliente. Un servidor conceptualmente es una unica entidad, aunque puede estar formado por varios elementos, que se reparten la carga de peticiones, (load balancing), u otros programas, que gestionan otros computadores (como cache, bases de datos, servidores de correo electrónico, ...), y que generan parte o todo el documento que ha sido pedido. 
-\\
+
 Un servidor no tiene que ser necesariamente un único equipo físico, aunque si que varios servidores pueden estar funcionando en un único computador. En el estándar HTTP/1.1 y Host , pueden incluso compartir la misma dirección de IP.
 
 \subsection{Transferencia de páginas web a través de http}
@@ -201,7 +241,7 @@ web (navegador) se la muestra con el formato apropiado, es el siguiente:
 	\item Se cierra la conexión entre el cliente y el servidor.
 	\item Se muestra la página al usuario.
 \end{enumerate}
-
+	
 Obsérvese que siempre se libera la conexión, por lo que ésta sólo tiene la duración
 correspondiente a la transmisión de la página solicitada. Esto se hace así para no
 desperdiciar innecesariamente el ancho de banda de la red mientras el usuario lee la
@@ -218,11 +258,12 @@ Una aplicación web (web-based application) es un tipo especial de aplicación c
 ) como
 el servidor (el servidor web) y el protocolo mediante el que se comunican (HTTP)
 están estandarizados y no han de ser creados por el programador de aplicaciones.
-\\
+
 El protocolo HTTP forma parte de la familia de protocolos de comunicaciones
 TCP/IP, que son los empleados en Internet. Estos protocolos permiten la conexión
 de sistemas heterogéneos, lo que facilita el intercambio de información entre distintos
 ordenadores. HTTP se sitúa en el nivel 7 (aplicación) del modelo OSI.
+
 
 \section{HTTP/HTTPS}
 
@@ -232,7 +273,7 @@ Clientes y servidores se comunican intercambiando mensajes individuales (en cont
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=1\textwidth]{HTTPyCapas.png}
+	\includegraphics[width=0.5\textwidth]{HTTPyCapas.png}
 	\caption{HTTP y capas}
 	\label{fig:super}
 \end{figure}
@@ -269,13 +310,13 @@ Las peticiones y respuestas HTTP, comparten una estructura similar, compuesta de
 \item Un grupo opcional de cabeceras HTTP, indicando la petición o describiendo el cuerpo ('body' en inglés) que se incluye en el mensaje. 
 \item Una línea vacía ('empty-line' en inglés) indicando toda la meta-información ha sido enviada.
 \item Un campo de cuerpo de mensaje opcional ('body' en inglés) que lleva los datos asociados con la petición (como contenido de un formulario HTML), o los archivos o documentos asociados a una respuesta (como una página HTML, o un archivo de audio, vídeo ... ) . La presencia del cuerpo y su tamaño es indicada en la línea de inicio y las cabeceras HTTP.
-
 \end{itemize}
+
 La línea de inicio y las cabeceras HTTP, del mensaje, son conocidas como la cabeza de la peticiones, mientras que su contenido en datos se conoce como el cuerpo del mensaje.
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=0.7\textwidth]{HTTPMsgStructure2.png}
+	\includegraphics[width=1\textwidth]{HTTPMsgStructure2.png}
 	\caption{Mensajes}
 	\label{fig:super}
 \end{figure}
@@ -312,7 +353,7 @@ Un ejemplo de petición HTTP:
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=0.7\textwidth]{HTTP_Request.png}
+	\includegraphics[width=0.5\textwidth]{HTTP_Request.png}
 	\caption{Petición}
 	\label{fig:super}
 \end{figure}
@@ -330,7 +371,7 @@ Una petición de HTTP, está formado  por los siguientes campos:
 Un ejemplo de repuesta:
 \begin{figure}[H]
 	\center
-	\includegraphics[width=0.7\textwidth]{HTTP_Response.png}
+	\includegraphics[width=0.5\textwidth]{HTTP_Response.png}
 	\caption{Respuesta}
 	\label{fig:super}
 \end{figure}
@@ -349,6 +390,7 @@ Las respuestas están formadas por los siguentes campos:
 HTTP define un conjunto de métodos de petición para indicar la acción que se desea realizar para un recurso determinado. Aunque estos también pueden ser sustantivos, estos métodos de solicitud a veces son llamados HTTP verbs. Cada uno de ellos implementan una semántica diferente, pero algunas características similares son compartidas por un grupo de ellos: ej. un request method puede ser safe, idempotent (en-US), o cacheable.
 
 \subsubsection{GET}
+
 El método GET  solicita una representación de un recurso específico. Las peticiones que usan el método GET sólo deben recuperar datos.
 
 \begin{figure}[H]
@@ -427,7 +469,7 @@ Los códigos de estado de respuesta HTTP indican si una solicitud HTTP específi
 	\item Respuestas de error del servidor (500–599)
 \end{enumerate}
 
-\subsubsection{Respuestas informativas }
+\subsubsection{Respuestas informativas}
 
 \begin{itemize}
 	\item 100 Continue: indica que todo está bien hasta el momento y que el cliente debe continuar con la solicitud o ignorarla si ya finalizó.
@@ -435,8 +477,40 @@ Los códigos de estado de respuesta HTTP indican si una solicitud HTTP específi
 	\item 102 Procesamiento (WebDAV): Este código indica que el servidor ha recibido y está procesando la solicitud, pero aún no hay respuesta disponible.
 \end{itemize}
 
-\subsection{URL - URI}
+\subsubsection{Respuestas satisfactorias}
 
+\begin{itemize}
+	\item 200 Ok: La solicitud ha tenido éxito. El significado de un éxito varía dependiendo del método HTTP.
+	\item 201 Created: La solicitud ha tenido éxito y se ha creado un nuevo recurso como resultado de ello. Ésta es típicamente la respuesta enviada después de una petición PUT.
+	\item 202 Accepted: La solicitud se ha recibido, pero aún no se ha actuado. Es una petición "sin compromiso", lo que significa que no hay manera en HTTP que permite enviar una respuesta asíncrona que indique el resultado del procesamiento de la solicitud. Está pensado para los casos en que otro proceso o servidor maneja la solicitud, o para el procesamiento por lotes.
+\end{itemize}
+
+\subsubsection{Redirecciones}
+
+\begin{itemize}
+	\item 300 Multiple Choice: Esta solicitud tiene más de una posible respuesta. User-Agent o el usuario debe escoger uno de ellos. No hay forma estandarizada de seleccionar una de las respuestas.
+	\item 301 Moved Permanently: Este código de respuesta significa que la URI  del recurso solicitado ha sido cambiado. Probablemente una nueva URI sea devuelta en la respuesta.
+\end{itemize}
+
+\subsubsection{Errores de cliente}
+
+\begin{itemize}
+	\item 400 Bad Request: Esta respuesta significa que el servidor no pudo interpretar la solicitud dada una sintaxis inválida.
+	\item 401 Unauthorized: Es necesario autenticar para obtener la respuesta solicitada. Esta es similar a 403, pero en este caso, la autenticación es posible.
+	\item 403 Forbidden: El cliente no posee los permisos necesarios para cierto contenido, por lo que el servidor está rechazando otorgar una respuesta apropiada.
+	\item 404 Not Found: El servidor no pudo encontrar el contenido solicitado. Este código de respuesta es uno de los más famosos dada su alta ocurrencia en la web.
+\end{itemize}
+
+\subsubsection{Errores de servidor}
+
+\begin{itemize}
+	\item 500 Internal Server Error: El servidor ha encontrado una situación que no sabe cómo manejarla.
+	\item 501 Not Implemented: El método solicitado no está soportado por el servidor y no puede ser manejado
+	\item 502 Bad Gateway: Esta respuesta de error significa que el servidor, mientras trabaja como una puerta de enlace para obtener una respuesta necesaria para manejar la petición, obtuvo una respuesta inválida.
+	\item 503 Service Unavailable: El servidor no está listo para manejar la petición. Causas comunes puede ser que el servidor está caído por mantenimiento o está sobrecargado. Hay que tomar en cuenta que junto con esta respuesta, una página usuario-amigable explicando el problema debe ser enviada.
+\end{itemize}
+
+\subsection{URL - URI}
 
 La «Uniform Resource Locator» (URL o Localizadora Uniforme de Recursos en Español) es una cadena de texto que especifica dónde se puede encontrar un recurso (como una página web, una imagen o un video) en Internet.
 
@@ -446,7 +520,25 @@ Las URLs también se pueden utilizar para la transferencia de archivos (FTP), co
 
 Un URI (Identificador Uniforme de Recursos de sus siglas en inglés: Uniform Resource Identifier) es una cadena que se refiere a un recurso. Los más comunes son URLs, que identifican el recurso dando su ubicación en la Web. URNs (en-US), por el contrario, se refiere a un recurso por un nombre, en un espacio de nombres determinados, como el ISBN(International Standard Book Number) de un libro.
 
-\url{https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_URL}
+Una URL está compuesta de diferentes partes, algunas obligatorias y otras opcionales. Veamos las partes más importantes usando la siguiente URL:
+
+\begin{lstlisting}
+	http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#Somewhere
+\end{lstlisting}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{mdn-url-protocol1.png}
+	\caption{Protocolo}
+\end{figure}
+
+http es el protocolo. La primera parte de la URL indica qué protocolo debe usar el navegador. Un protocolo es un método establecido para intercambiar o transferir datos alrededor de una red informática. Por lo general, para sitios web es el protocolo HTTP o su versión segura, HTTPS. La Web requiere uno de estos dos, pero los navegadores también saben cómo manejar otros protocolos como mailto: (para abrir un cliente de correo) o ftp: para manejar la transferencia de archivos, así que no se sorprenda si ve tales protocolos.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{mdn-url-domain.png}
+	\caption{Dominio}
+\end{figure}
 
 \section{Modelo de Objetos de Documento - DOM}
 
