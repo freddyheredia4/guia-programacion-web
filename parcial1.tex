@@ -654,7 +654,34 @@ Los sistemas de gestión de contenidos se definen por las siguientes particulari
 
 \section{HTML}
 
+\cite{mdn} El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar y desplegar una página web y sus contenidos. Por ejemplo, sus contenidos podrían ser párrafos, una lista con viñetas, o imágenes y tablas de datos
 
+HTML no es un lenguaje de programación; es un lenguaje de marcado que define la estructura de tu contenido. HTML consiste en una serie de elementos que usarás para encerrar diferentes partes del contenido para que se vean o comporten de una determinada manera. Las etiquetas de encierre pueden hacer de una palabra o una imagen un hipervínculo a otro sitio, se pueden cambiar palabras a cursiva, agrandar o achicar la letra, etc. Por ejemplo, toma la siguiente línea de contenido:
+
+\begin{lstlisting}
+Mi gato es muy gruñon
+\end{lstlisting}
+
+Si quieres especificar que se trata de un párrafo, podrías encerrar el texto con la etiqueta de párrafo (<p>):
+
+\begin{lstlisting}
+	<p>Mi gato es muy gruñon</p>
+\end{lstlisting}
+
+\subsection{Anatomía de un elemento HTML}
+Explora este párrafo en mayor profundidad.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{htmlexp.png}
+	\caption{Estructura de un elemento html}
+\end{figure}
+
+Las partes principales del elemento son:
+
+\begin{itemize}
+	\item La etiqueta de apertura: consiste en el nombre del elemento (en este caso, p), encerrado por paréntesis angulares (< >) de apertura y cierre. Establece dónde comienza o empieza a tener efecto el elemento —en este caso, dónde es el comienzo del párrafo—.
+\end{itemize}
 
 \section{CSS}
 
