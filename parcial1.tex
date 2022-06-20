@@ -528,7 +528,7 @@ Una URL está compuesta de diferentes partes, algunas obligatorias y otras opcio
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=1\textwidth]{mdn-url-protocol1.png}
+	\includegraphics[width=0.5\textwidth]{mdn-url-protocol1.png}
 	\caption{Protocolo}
 \end{figure}
 
@@ -536,9 +536,43 @@ http es el protocolo. La primera parte de la URL indica qué protocolo debe usar
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=1\textwidth]{mdn-url-domain.png}
+	\includegraphics[width=0.5\textwidth]{mdn-url-domain.png}
 	\caption{Dominio}
 \end{figure}
+
+www.example.com es el nombre de dominio o autoridad que gobierna el espacio de nombres. Indica cuando es solicitado el servidor Web
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.5\textwidth]{mdn-url-port.png}
+	\caption{Puerto}
+\end{figure}
+
+:80 es el puerto en este caso. Indica la técnica \textbf{puerta} usada para acceder a los recursos en el servidor web. Usualmente es omitido si el servidor web usa los puertos estándares del protocolo HTTP (80 para HTTP y 443 para HTTPS) para permitir el acceso a sus recursos. De lo contrario, es obligatorio.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.5\textwidth]{mdn-url-path.png}
+	\caption{Puerto}
+\end{figure}
+
+/path/to/myfile.html es la ruta de acceso al recurso en el servidor Web. En los primeros días de la Web, una ruta como esta presentaba la ubicación física del archivo en el servidor Web. Hoy en día, es sobre todo una abstracción manejada por los servidores Web sin ningún tipo de realidad física.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.5\textwidth]{mdn-url-parameters.png}
+	\caption{Parametros}
+\end{figure}
+
+?key1=value1\&key2=value2 son unos parámetros adicionales proporcionados al servidor Web. Esos parámetros son una lista de pares llave/valores separados por el símbolo \&. El servidor Web puede utilizar estos parámetros para hacer cosas adicionales antes de retornar el recurso al usuario. 
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.5\textwidth]{mdn-url-anchor.png}
+	\caption{Ancla}
+\end{figure}
+
+\#SomewhereInTheDocument es una referencia a otra parte del propio recurso. Esto representa una especie de "marcador" dentro del recurso, otorgandole al navegador las instrucciones para mostrar el contenido que se encuentra en esa referencia señalada. 
 
 \section{Modelo de Objetos de Documento - DOM}
 
