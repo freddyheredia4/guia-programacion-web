@@ -46,3 +46,4 @@ biber main
 pdflatex -synctex=1 -interaction=nonstopmode $archivo
 pdflatex -synctex=1 -interaction=nonstopmode $archivo
 borrartemporales
+cp main.pdf guia-programacion-aplicaciones-web.pdf

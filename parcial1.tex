@@ -1,6 +1,3 @@
-\chapter{Parcial 1}
-
-
 \section{Sobre esta guía}\index{Sobre la guía}
 
 La siguiente guía tiene como objetivo presentar de manera sistemática los contenidos teórico práctico de la asignatura \textbf{Programación de aplicaciones web} en base al plan de carrera del Instituto Tecnológico Benito Juárez en su rediseño del año 2016 para Desarrollo de Software.
@@ -30,6 +27,8 @@ La siguiente guía tiene como objetivo presentar de manera sistemática los cont
 			\hline
 		\end{tabular}
 \end{center}
+
+\chapter{Conceptos generales}
 
 \section{El origen} \index{El origen}
 
@@ -71,7 +70,7 @@ reservado que no puede emplear ningún otro protocolo.
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=0.7\textwidth]{tcp-udp.png}
+	\includegraphics[width=1\textwidth]{tcp-udp.png}
 	\caption{Comparativa TCP - UDP}
 	\label{fig:super}
 \end{figure}
@@ -653,55 +652,11 @@ Los sistemas de gestión de contenidos se definen por las siguientes particulari
 	\label{fig:super}
 \end{figure}
 
-\section{Entorno de desarrollo}
-
-nodejs
-https://github.com/nodesource/distributions/blob/master/README.md
-
-Angular: npm install -g @angular/cli
-
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-get-ExecutionPolicy -list
-
-\section{Backend}
-\subsection{Postman - Thunder client - curl}
-\subsection{Frameworks}
-\subsection{Java}
-\subsection{Spring boot}
-\subsection{Spring data}
-\subsection{Postgres - Mongo - Elastic Search}
-\subsection{CRUD}
-\subsubsection{Entidades - DTOs}
-\subsubsection{Repositorios}
-\subsubsection{Servicios}
-\subsubsection{Controladores}
-
-\section{Frontend}
-\subsection{Frameworks}
-
-\cite{wiki}Un entorno de trabajo (del inglés framework), o marco de trabajo es un conjunto estandarizado
-de conceptos, prácticas y criterios para enfocar un tipo de problemática particular que sirve como
-referencia, para enfrentar y resolver nuevos problemas de índole similar.
-En el desarrollo de software, un entorno de trabajo es una estructura conceptual y tecnológica
-de asistencia definida, normalmente, con artefactos o módulos concretos de software, que puede
-servir de base para la organización y desarrollo de software. Típicamente, puede incluir soporte
-de programas, bibliotecas, y un lenguaje interpretado, entre otras herramientas, para así ayudar a
-desarrollar y unir los diferentes componentes de un proyecto.
-Representa una arquitectura de software que modela las relaciones generales de las entidades del
-dominio, y provee una estructura y especial metodología de trabajo, la cual extiende o utiliza las
-aplicaciones del dominio.
-
-\begin{figure}[H]
-	\center
-	\includegraphics[width=0.7\textwidth]{frontend-frameworks-social.jpg}
-	\caption{Algunos frameworks para frontend}
-	\label{fig:super}
-\end{figure}
-
-\subsection{HTML}
+\section{HTML}
 
 
-\subsection{CSS}
+
+\section{CSS}
 
 \cite{mdn}CSS (Cascading Style Sheets - en español Hojas de Estilo en Cascadas) es usado para darle estilo y diseño a las páginas Web — por ejemplo, para cambiar la fuente de letra, color, tamaño y el espaciado de tu contenido; dividir en múltiples columnas, o agregar animaciones y otras propiedades decorativas. Este modulo provee un inicio suave para tu ruta de aprendizaje hacia el dominio de CSS con su funcionamiento básico, como luce su sintaxis, y cómo puedes comenzar a utilizarlo y añadir estilo a HTML.
 
@@ -1020,9 +975,28 @@ El siguiente diagrama ofrece una visión sencilla de este proceso.
 \end{figure}
 
 
-\\
-\url{https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Normal_Flow}
-\url{https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout}
+\subsection{Normal flow}
+
+Los elementos en las páginas web se presentan de acuerdo con el flujo normal, hasta que hacemos algo que cambie eso. Esta sección explica las bases del flujo normal para aprender como cambiarlo.
+
+¿Cómo se presentan por defecto los elementos?
+
+En primer lugar, se toma de las cajas de cada uno de los elementos el contenido, luego se añade cualquier área de relleno, borde y margen alrededor de ellas; es el modelo de cajas que hemos visto antes.
+
+De manera predeterminada, el contenido de un elemento de nivel de bloque es el 100\% del ancho de su elemento padre y su altura viene determinada por su contenido. Los elementos en línea tienen su altura y anchura determinados por su contenido. No puedes establecer el ancho o la altura de los elementos en línea, simplemente se ubican dentro del contenido de los elementos de nivel de bloque. Si deseas controlar el tamaño de un elemento en línea de esta manera, debes configurarlo para que se comporte como un elemento de nivel de bloque con display: block; (o incluso, display: inline-block;, que combina características de ambos).
+
+Esto explica los elementos individuales, pero ¿qué hay del modo como los elementos interactúan entre sí? El flujo de diseño normal (mencionado en el artículo de introducción al diseño) es el sistema mediante el cual los elementos se colocan en la ventana gráfica del navegador. De manera predeterminada, los elementos de nivel de bloque se presentan en la dirección del flujo del bloque, en función del modo de escritura de los padres (initial: horizontal-tb): cada uno aparecerá en una línea nueva debajo de la última, y estarán separados por cualquier margen que se establezca en ellos. Por lo tanto, en inglés, o en cualquier otro modo de escritura horizontal y de arriba a abajo, los elementos de nivel de bloque se disponen verticalmente.
+
+Los elementos en línea se comportan de manera diferente: no aparecen en líneas nuevas; en su lugar, se asientan en la misma línea entre sí y con cualquier contenido de texto adyacente (o envuelto), siempre que tengan espacio dentro del ancho del elemento de nivel de bloque primario. Si no hay espacio, el texto o los elementos que desborden bajarán a la línea siguiente.
+
+Si dos elementos adyacentes tienen algún margen configurado y los dos márgenes se tocan, se mantiene el mayor de los dos y el menor desaparece; esto se llama colapso del margen, y ya lo hemos visto antes.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{flujo1.png}
+	\caption{Ejemplo Flujo normal}
+	\label{fig:super}
+\end{figure}
 
 \subsection{Contenido desbordante}
 
@@ -1070,7 +1044,7 @@ Para recortar el contenido cuando se desborda, puede establecer desbordamiento: 
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=1\textwidth]{desbordamiento3.png}
+	\includegraphics[width=0.6\textwidth]{desbordamiento3.png}
 	\caption{Ejemplo desbordamiento}
 	\label{fig:super}
 \end{figure}
@@ -1087,64 +1061,113 @@ Usando overflow: scroll, los navegadores con barras de desplazamiento visibles s
 Para simplemente desplazarse en el eje y, puede usar la propiedad overflow-y, configurando overflow-y: scroll. y overflow-x para desplazarse en el eje de las x
 \end{remark}
 
-\subsection{Normal flow}
-
-Los elementos en las páginas web se presentan de acuerdo con el flujo normal, hasta que hacemos algo que cambie eso. Esta sección explica las bases del flujo normal para aprender como cambiarlo.
-\\
-¿Cómo se presentan por defecto los elementos?
-\\\\
-En primer lugar, se toma de las cajas de cada uno de los elementos el contenido, luego se añade cualquier área de relleno, borde y margen alrededor de ellas; es el modelo de cajas que hemos visto antes.
-\\
-De manera predeterminada, el contenido de un elemento de nivel de bloque es el 100% del ancho de su elemento padre y su altura viene determinada por su contenido. Los elementos en línea tienen su altura y anchura determinados por su contenido. No puedes establecer el ancho o la altura de los elementos en línea, simplemente se ubican dentro del contenido de los elementos de nivel de bloque. Si deseas controlar el tamaño de un elemento en línea de esta manera, debes configurarlo para que se comporte como un elemento de nivel de bloque con display: block; (o incluso, display: inline-block;, que combina características de ambos).
-\\
-Esto explica los elementos individuales, pero ¿qué hay del modo como los elementos interactúan entre sí? El flujo de diseño normal (mencionado en el artículo de introducción al diseño) es el sistema mediante el cual los elementos se colocan en la ventana gráfica del navegador. De manera predeterminada, los elementos de nivel de bloque se presentan en la dirección del flujo del bloque, en función del modo de escritura de los padres (initial: horizontal-tb): cada uno aparecerá en una línea nueva debajo de la última, y estarán separados por cualquier margen que se establezca en ellos. Por lo tanto, en inglés, o en cualquier otro modo de escritura horizontal y de arriba a abajo, los elementos de nivel de bloque se disponen verticalmente.
-\\
-Los elementos en línea se comportan de manera diferente: no aparecen en líneas nuevas; en su lugar, se asientan en la misma línea entre sí y con cualquier contenido de texto adyacente (o envuelto), siempre que tengan espacio dentro del ancho del elemento de nivel de bloque primario. Si no hay espacio, el texto o los elementos que desborden bajarán a la línea siguiente.
-\\
-Si dos elementos adyacentes tienen algún margen configurado y los dos márgenes se tocan, se mantiene el mayor de los dos y el menor desaparece; esto se llama colapso del margen, y ya lo hemos visto antes.
-
-\begin{figure}[H]
-	\center
-	\includegraphics[width=1\textwidth]{flujo1.png}
-	\caption{Ejemplo Flujo normal}
-	\label{fig:super}
-\end{figure}
-
-
 \subsubsection{Flexbox}
 
 Flexbox es un método de diseño de página unidimensional para compaginar elementos en filas o columnas. Los elementos de contenido se ensanchan para rellenar el espacio adicional y se encogen para caber en espacios más pequeños. En este artículo expondremos todas sus características básicas.
 
+\subsubsection{Grid} \cite{mdn}
 
-\subsubsection{Frameworks CSS}
+CSS Grid Layout presenta un sistema de cuadrícula bidimensional para CSS. Las cuadrículas se pueden utilizar para posicionar áreas principales de la página o pequeños elementos de la interfaz de usuario.
 
-material ui GOD
-ERICK JOEL DAMIAN CASIS18:17
-bulma 
-LUIS MAURICIO MATANGO MENDOZA18:17
-next ui
-HENRRY DAVID ALVARADO MALES18:17
-Ant Design
-material dashboard
-prime ng
-Prime React
-Chakra UI
+CSS Grid layout contiene funciones de diseño dirigidas a los desarrolladores de aplicaciones web. El CSS grid se puede utilizar para lograr muchos diseños diferentes. También se destaca por permitir dividir una página en áreas o regiones principales, por definir la relación en términos de tamaño, posición y capas entre partes de un control construido a partir de primitivas HTML.
 
+Al igual que las tablas, el grid layout permite a un autor alinear elementos en columnas y filas. Sin embargo, con CSS grid son posibles muchos más diseños y de forma más sencilla que con las tablas. Por ejemplo, los elementos secundarios de un contenedor de cuadrícula podrían posicionarse para que se solapen y se superpongan, de forma similar a los elementos posicionados en CSS.
 
+¿Qué es una cuadrícula(grid)?
 
-\subsubsection{Tailwind CSS}
-\subsection{Javascript - ECMAScript}
+Una cuadrícula es un conjunto de líneas horizontales y verticales que se intersectan - un grupo define columnas y el otro filas. Los elementos se pueden colocar en la cuadrícula respetando estas columnas y filas. El diseño de cuadrícula CSS tiene las siguientes características:
+
+\begin{itemize}
+	\item Tamaños fijos y flexibles:  puede crear una cuadrícula con tamaños fijos, utilizando píxeles, también se puede crear una cuadrícula utilizando tamaños flexibles con porcentajes o con la nueva unidad de medida fr (fracción), diseñada para este propósito.
+	\item Posicionamiento de elementos: puede colocar elementos en una ubicación precisa en la cuadrícula utilizando números de línea, nombres o seleccionando un área de la cuadrícula.
+	\item Creación de líneas adicionales para alojar contenido: Grid Layout  es lo suficientemente flexible como para permitir agregar filas y columnas adicionales cuando sea necesario.
+	\item Control de alineación: contiene características de alineación para poder controlar la forma cómo se alinean los elementos una vez colocados en un área de cuadrícula y cómo está alineada toda la cuadrícula.
+	\item Control de contenido superpuesto: Se puede colocar más de un elemento en una celda de la cuadrícula o área, las cuales pueden solaparse o superponerse total o parcialmente entre sí. Esta estratificación puede ser controlada con la propiedad z-index.
+\end{itemize}
+
+\begin{remark}
+	Para mayor información vea: 
+	\url{https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout}
+\end{remark}
+
+\subsection{Frameworks CSS}
+
+\cite{wiki} Un framework de CSS es una biblioteca de estilos genéricos que puede ser usada para implementar diseños web. Aportan una serie de utilidades que pueden ser aprovechadas frecuentemente en los distintos diseños web.
+
+\subsubsection{Ventajas}
+
+Un framework de CSS, si está bien diseñado e implementado, proporciona las siguientes ventajas:
+
+\begin{itemize}
+	\item Proporcionar una forma fácil y por tanto rápida de implementar diseños web.
+	\item Nos aseguran que el diseño va a funcionar en una amplia gama de navegadores
+	\item Nos aseguran que su código cumple cierta normas estándar.
+	\item Nos aseguran cierto grado de fiabilidad en la eficacia de las utilidades que nos aportan. El framework se supone que está bien probado para asegurarnos que no hay errores.
+\end{itemize}
+
+\subsubsection{Inconvenientes}
+El uso de un framework de CSS puede (no siempre) llevar aparejado las siguientes desventajas:
+
+\begin{itemize}
+	\item La importación de código del framework que no es necesario en nuestro diseño web concreto. Esto provoca un incremento innecesario del consumo del ancho de banda y del tiempo de descarga.
+	\item Hay un menor control por parte del maquetador de lo que realmente está sucediendo en la visualización de la página web. Esto suele ser un problema cuando se tiene que corregir algún efecto indeseado.
+	\item Al diseñar con código prehecho, podemos estar limitándonos en cuanto las posibilidades de elección del diseño web.
+\end{itemize}
+
+\subsubsection{Algunos frameworks css}
+
+\textbf{Tailwindcss}
+\url{https://tailwindcss.com/}
+
+\textbf{Daisyui}
+\url{https://daisyui.com/}
+
+\textbf{Material UI}
+\url{https://mui.com/material-ui/getting-started/overview/}
+
+\textbf{Bulma}
+\url{https://bulma.io/}
+
+\textbf{NextUI}
+\url{https://nextui.org/}
+
+\textbf{Ant Design}
+\url{https://ant.design/}
+
+\textbf{PrimeNG}
+\url{https://www.primefaces.org/primeng/}
+
+\textbf{PrimeReact}
+\url{https://www.primefaces.org/primereact/}
+
+\textbf{Chakra}
+\url{https://chakra-ui.com/}
+
+\section{Javascript - ECMAScript}
 \subsection{Typescript}
 https://www.typescriptlang.org/cheatsheets
 
-\subsection{CRUD}
-\subsubsection{Entidades - DTOs}
-\subsubsection{Servicios}
-\subsubsection{Componentes}
-\subsubsection{Input - Output}
-\subsection{Temas}
-\subsection{Menús}
-\section{Ramificación GIT}
+
+\subsection{Frameworks}
+
+\cite{wiki}Un entorno de trabajo (del inglés framework), o marco de trabajo es un conjunto estandarizado
+de conceptos, prácticas y criterios para enfocar un tipo de problemática particular que sirve como
+referencia, para enfrentar y resolver nuevos problemas de índole similar.
+En el desarrollo de software, un entorno de trabajo es una estructura conceptual y tecnológica
+de asistencia definida, normalmente, con artefactos o módulos concretos de software, que puede
+servir de base para la organización y desarrollo de software. Típicamente, puede incluir soporte
+de programas, bibliotecas, y un lenguaje interpretado, entre otras herramientas, para así ayudar a
+desarrollar y unir los diferentes componentes de un proyecto.
+Representa una arquitectura de software que modela las relaciones generales de las entidades del
+dominio, y provee una estructura y especial metodología de trabajo, la cual extiende o utiliza las
+aplicaciones del dominio.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{frontend-frameworks-social.jpg}
+	\caption{Algunos frameworks para frontend}
+	\label{fig:super}
+\end{figure}
 
 \section{Localización e Internacionalización}
 
