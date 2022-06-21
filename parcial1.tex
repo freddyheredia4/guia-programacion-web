@@ -681,7 +681,100 @@ Las partes principales del elemento son:
 
 \begin{itemize}
 	\item La etiqueta de apertura: consiste en el nombre del elemento (en este caso, p), encerrado por paréntesis angulares (< >) de apertura y cierre. Establece dónde comienza o empieza a tener efecto el elemento —en este caso, dónde es el comienzo del párrafo—.
+	\item El contenido: Este es el contenido del elemento. En este ejemplo, es el texto del párrafo.
+	\item La etiqueta de cierre: Es lo mismo que la etiqueta de apertura, excepto que incluye una barra diagonal antes del nombre del elemento. Esto indica dónde termina el elemento; en este caso, dónde finaliza el párrafo. No incluir una etiqueta de cierre es un error común de principiante, y puede conducir a extraños resultados.
 \end{itemize}
+
+\subsection{Elementos anidados}
+
+El elemento lo conforman la etiqueta de apertura, seguida del contenido, seguido de la etiqueta de cierre.
+
+Se pueden poner elementos dentro de otros elementos. Esto se llama anidamiento. Si quisiéramos decir que nuestro gato es muy gruñón, podríamos encerrar la palabra muy en un elemento\textbf{ <strong>} para que aparezca destacada.
+
+\begin{lstlisting}[language=html]
+<p>Mi gato es <strong>muy</strong> gruñón.</p>
+\end{lstlisting}
+
+Hay una forma correcta e incorrecta de anidar. En el ejemplo anterior, primero abrimos el elemento p, luego abrimos el elemento strong. Para un anidamiento adecuado, primero debemos cerrar el elemento strong, antes de cerrar el p.
+
+El siguiente es un ejemplo de la forma incorrecta de anidar:
+
+\begin{lstlisting}[language=HTML]
+<p>Mi gato es <strong>muy gruñón.</p></strong>
+\end{lstlisting}
+
+\subsection{Elementos de bloque y elementos en línea}
+Hay dos categorías importantes de elementos en HTML — Estos son los elementos de bloque y los elementos en línea.
+
+\begin{itemize}
+	\item Los elementos de bloque forman un bloque visible en la página. Aparecerán en una línea nueva después de cualquier contenido anterior. Cualquier contenido que vaya después también aparecerá en una línea nueva. Los elementos a nivel de bloque suelen ser elementos estructurales de la página. Por ejemplo, un elemento a nivel de bloque puede representar encabezados, párrafos, listas, menús de navegación o pies de página. Un elemento a nivel de bloque no estaría anidado dentro de un elemento en línea, pero podría estar anidado dentro de otro elemento a nivel de bloque.
+	\item Los elementos en línea están contenidos dentro de elementos de bloque y delimitan solo pequeñas partes del contenido del documento; (no párrafos enteros o agrupaciones de contenido) Un elemento en línea no hará que aparezca una nueva línea en el documento. Suele utilizarse con texto. Por ejemplo es el caso de un elemento <a> (hipervínculo) o elementos de énfasis como <em> o <strong>.
+\end{itemize}
+
+\begin{remark}
+Nota: HTML5 redefinió las categorías de elementos: consulta Categorías de contenido de elementos. Si bien estas definiciones son más precisas y menos ambiguas que sus predecesoras, las nuevas definiciones son mucho más complicadas de entender que block e inline . Este artículo seguirá con estos dos términos.
+\end{remark}
+
+\subsection{Elementos vacíos}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=0.2\textwidth]{firefox-icon.png}
+	\end{center}
+	\caption{Ejemplo elemento img}
+\end{wrapfigure}
+
+No todos los elementos siguen el patrón de etiqueta de apertura, contenido y etiqueta de cierre. Algunos elementos consisten solo en una etiqueta única, que se utiliza generalmente para insertar/incrustar algo en el documento en el lugar donde se le quiere incluir. Por ejemplo, el elemento <img> inserta una imagen en la página:
+
+\begin{lstlisting}
+<img src="https://raw.githubusercontent.com
+/mdn/beginner-html-site/gh-pages/images
+/firefox-icon.png">
+\end{lstlisting}
+
+\subsection{Atributos}
+
+Los elementos también pueden tener atributos. Los atributos tienen este aspecto:
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{htmlatributos.png}
+	\caption{Atributos en un elemento html}
+\end{figure}
+
+Los atributos contienen información extra sobre el elemento que no se mostrará en el contenido. En este caso, el atributo class asigna al elemento un identificador que se puede utilizar para dotarlo de información de estilo.
+
+Un atributo debería tener:
+
+\begin{itemize}
+	\item Un espacio entre este y el nombre del elemento. (Para un elemento con más de un atributo, los atributos también deben estar separados por espacios).
+	\item El nombre del atributo, seguido por un signo igual.
+	\item Un valor del atributo, rodeado de comillas de apertura y cierre.
+\end{itemize}
+
+\subsection{Anatomía de un documento HTML}
+
+Los elementos HTML no son muy útiles por sí mismos. Ahora veremos cómo combinar los elementos individuales para formar una página HTML completa:
+
+\begin{lstlisting}[language=html]
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Mi página de prueba</title>
+	</head>
+	<body>
+		<p>Esta es mi página</p>
+	</body>
+</html>
+\end{lstlisting}
+
+Aquí tenemos:
+
+\begin{enumerate}}
+	\item <!DOCTYPE html>: El elemento doctype. en la actualidad se ignora y se considera un legado histórico que hay que incluir para que todo funcione correctamente. <!DOCTYPE html> es la secuencia de caracteres más corta que se acepta como elemento doctype válido. 
+	\item 
+\end{enum+}
 
 \section{CSS}
 
