@@ -1503,19 +1503,19 @@ A continuación algunas hojas de trucos
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=1\textwidth]{TypeScriptInterfaces.png}
+	\includegraphics[width=0.8\textwidth]{TypeScriptInterfaces.png}
 	\caption{Interfases}
 \end{figure}
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=1\textwidth]{TypeScriptClasses.png}
+	\includegraphics[width=0.8\textwidth]{TypeScriptClasses.png}
 	\caption{Clases}
 \end{figure}
 
 \begin{figure}[H]
 	\center
-	\includegraphics[width=1\textwidth]{TypeScriptTypes.png}
+	\includegraphics[width=0.8\textwidth]{TypeScriptTypes.png}
 	\caption{Tipos}
 \end{figure}
 
@@ -1545,6 +1545,48 @@ aplicaciones del dominio.
 \section{Estructura de datos}
 
 \subsection{JSON}
+\cite{json} JSON (Notación de objetos de JavaScript) es un formato ligero de intercambio de datos. Es fácil para los humanos leer y escribir. Es fácil para las máquinas analizar y generar. Se basa en un subconjunto del estándar de lenguaje de programación JavaScript ECMA-262 3ra edición - diciembre de 1999. JSON es un formato de texto que es completamente independiente del lenguaje pero utiliza convenciones que son familiares para los programadores de la familia de lenguajes C, incluidos C, C++, C#, Java, JavaScript, Perl, Python y muchos otros. Estas propiedades hacen de JSON un lenguaje de intercambio de datos ideal.
+
+JSON se basa en dos estructuras:
+
+\begin{itemize}
+	\item Una colección de pares de nombre/valor. En varios idiomas, esto se realiza como un objeto , registro, estructura, diccionario, tabla hash, lista con clave o matriz asociativa.
+	\item Una lista ordenada de valores. En la mayoría de los lenguajes, esto se realiza como una matriz , un vector, una lista o una secuencia.
+\end{itemize}
+
+Estas son estructuras de datos universales. Prácticamente todos los lenguajes de programación modernos los admiten de una forma u otra. Tiene sentido que un formato de datos que sea intercambiable con los lenguajes de programación también se base en estas estructuras.
+
+En JSON, toman estas formas:
+
+\begin{itemize}
+	\item Un objeto es un conjunto desordenado de pares nombre/valor. Un objeto comienza con { llave izquierda y termina con } llave derecha . Cada nombre va seguido de : dos puntos y los pares de nombre/valor están separados por , coma .
+	\begin{figure}[H]
+		\center
+		\includegraphics[width=0.5\textwidth]{object1.png}
+		\caption{Clave valor}
+	\end{figure}
+	\item Una matriz es una colección ordenada de valores. Una matriz comienza con [ corchete izquierdo y termina con ] corchete derecho . Los valores están separados por comas .
+	\begin{figure}[H]
+		\center
+		\includegraphics[width=0.5\textwidth]{array.png}
+		\caption{Arreglo - Matriz}
+	\end{figure}
+\end{itemize}
+
+Un valor puede ser una cadena entre comillas dobles, un número , verdadero , falso o nulo , un objeto o una matriz . Estas estructuras se pueden anidar.
+
+	\begin{figure}[H]
+	\center
+	\includegraphics[width=0.5\textwidth]{value-json.png}
+	\caption{Tipos de valores}
+\end{figure}
+\begin{remark}
+Una cadena es una secuencia de cero o más caracteres Unicode, entre comillas dobles, usando escapes de barra invertida. Un carácter se representa como una sola cadena de caracteres. Una cadena es muy parecida a una cadena C o Java.
+\end{remark}
+\begin{remark}
+Un número es muy parecido a un número de C o Java, excepto que no se utilizan los formatos octal y hexadecimal.
+\end{remark}
+
 
 \subsection{XML}
 
