@@ -1587,10 +1587,67 @@ Una cadena es una secuencia de cero o más caracteres Unicode, entre comillas do
 Un número es muy parecido a un número de C o Java, excepto que no se utilizan los formatos octal y hexadecimal.
 \end{remark}
 
-
 \subsection{XML}
 
+\cite{mdn} XML es un lenguaje de marcado similar a HTML. Significa Extensible Markup Language (Lenguaje de Marcado Extensible) y es una especificación de W3C como lenguaje de marcado de propósito general. Esto significa que, a diferencia de otros lenguajes de marcado, XML no está predefinido, por lo que debes definir tus propias etiquetas. El propósito principal del lenguaje es compartir datos a través de diferentes sistemas, como Internet.
+
+Hay muchos lenguajes basados en XML; Algunos ejemplos son XHTML, MathML, SVG, XUL, XBL, RSS, y RDF. También puedes crear uno propio.
+
+\subsubsection{XML "Correcto" (válido y bien formado)}
+
+Para que un documento XML sea correcto, debe ser un documento bien formado, cumpliendo todas las reglas de sintaxis de XML, y válidas, acorde a las reglas de un lenguaje específico. Un ejemplo de un documento que no está bien formado es uno que tiene una etiqueta de apertura y no tiene una de cierre, ni se cierra en si misma.
+
+En el ejemplo siguiente, vemos un documento en el que una etiqueta que no se cierra a si misma, no tiene etiqueta de cierre.
+
+\begin{lstlisting}
+<message>
+	<warning>
+		Hola, mundo
+</message>
+\end{lstlisting}
+
+Ahora veamos una versión correcta del mismo documento:
+
+\begin{lstlisting}
+<message>
+	<warning>
+		Hola, mundo
+	</warning>
+</message>
+\end{lstlisting}
+
+Para ser válido, un documento XML necesita cumplir ciertas reglas de semántica que son generalmente definidas en un esquema XML o en una Definición de Tipo de Documento (en-US) (DTD). Un documento que contiene una etiqueta no definida es inválido. Por ejemplo, si nunca definimos la etiqueta <warning>, el documento anterior no sería válido.
+
+\subsubsection{Arreglos en xml}
+
+XML Array se ha definido como una matriz variable que agrupa los mismos elementos en la lista y contiene uno o más elementos secundarios. Los arreglos son una secuencia de elementos declarados con el mismo nombre.
+
+La sintaxis general se muestra como:
+
+\begin{lstlisting}
+<?versión xml="1.0" codificación="utf-8"?>
+<recursos>
+	<item>recurso 1</item>
+	<item>recurso 2</item>
+	<item>recurso 3</item>		
+</recursos>
+
+\end{lstlisting}
+
 \subsection{DTO}
+\cite{mf}Un objeto que transporta datos entre procesos para reducir el número de llamadas a métodos.
+
+Cuando trabaja con una interfaz remota, como Remote Facade (388), cada llamada es costosa. Como resultado, necesita reducir la cantidad de llamadas y eso significa que necesita transferir más datos con cada llamada. Una forma de hacer esto es usar muchos parámetros. Sin embargo, esto a menudo es complicado de programar; de hecho, a menudo es imposible con lenguajes como Java que devuelven un solo valor.
+
+La solución es crear un objeto de transferencia de datos que pueda contener todos los datos de la llamada. Debe ser serializable para atravesar la conexión. Por lo general, se usa un ensamblador en el lado del servidor para transferir datos entre el DTO y cualquier objeto de dominio.
+
+Aunque la razón principal para usar un objeto de transferencia de datos es agrupar lo que serían múltiples llamadas remotas en una sola llamada, vale la pena mencionar que otra ventaja es encapsular el mecanismo de serialización para transferir datos por cable. Al encapsular la serialización de esta manera, los DTO mantienen esta lógica fuera del resto del código y también brindan un punto claro para cambiar la serialización si lo desea.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{dtoSketch.png}
+	\caption{Ejemplo de un DTO}
+\end{figure}
 
 \section{Localización e Internacionalización}
 
