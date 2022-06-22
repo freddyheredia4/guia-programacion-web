@@ -1267,7 +1267,31 @@ El uso de un framework de CSS puede (no siempre) llevar aparejado las siguientes
 \textbf{Chakra}
 \url{https://chakra-ui.com/}
 
-\section{Javascript - ECMAScript}
+\section{Javascript}
+
+\subsection{ECMAScript}
+
+\cite{ecma} Ecma International es una asociación industrial dedicada a la estandarización de los sistemas de información y comunicación.
+
+Ecma está impulsada por miembros de la industria para satisfacer sus necesidades, brindando un panorama competitivo saludable basado en la diferenciación de productos y servicios en lugar de modelos tecnológicos, generando confianza entre los proveedores y usuarios de nuevas tecnologías.
+
+\cite{wiki} ECMAScript es una especificación de lenguaje de programación publicada por ECMA International. El desarrollo empezó en 1996 y estuvo basado en el popular lenguaje JavaScript propuesto como estándar por Netscape Communications Corporation. Actualmente está aceptado como el estándar ISO/IEC 22275:2018.
+
+ECMAScript define un lenguaje de tipos dinámicos ligeramente inspirado en Java y otros lenguajes del estilo de C. Soporta algunas características de la programación orientada a objetos mediante objetos basados en prototipos y pseudoclases.
+
+\cite{ecma} Estandarización del lenguaje de programación ECMAScript® de propósito general, multiplataforma e independiente del proveedor. Esto incluye la sintaxis, la semántica y las bibliotecas del lenguaje y las tecnologías complementarias que respaldan el lenguaje. Este trabajo pretende no utilizar patentes o, de ser así, solo patentes libres de regalías.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.6\textwidth]{ecma-evolution.png}
+	\caption{Evolución Ecmascript :-)}
+\end{figure}
+
+\begin{remark}
+	La versión actual del estandar EcmaScript en el momento de escribir esta guía es la 2022 y la puedes encontrar en el siguiente enlace:
+	\url{https://www.ecma-international.org/wp-content/uploads/ECMA-262_13th_edition_june_2022.pdf}
+\end{remark}
+
 
 \subsection{Javascript}
 \cite{mdn} JavaScript es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones complejas en páginas web, cada vez que una página web hace algo más que sentarse allí y mostrar información estática para que la veas, muestra oportunas actualizaciones de contenido, mapas interactivos, animación de Gráficos 2D/3D, desplazamiento de máquinas reproductoras de vídeo, etc., puedes apostar que probablemente JavaScript está involucrado. Es la tercera capa del pastel de las tecnologías web estándar, dos de las cuales (HTML y CSS) hemos cubierto con mucho más detalle en otras partes del Área de aprendizaje.
@@ -1320,11 +1344,182 @@ Para resumir:
 	\item Si tus scripts necesitan esperar a ser procesados y dependen de otros scripts y/o del DOM en su lugar, cárgalos usando defery coloca tus elementos <script> correspondientes en el orden que desees que el navegador los ejecute.
 \end{itemize}
 
+\subsection{Un poco de sintaxis}
+
+\subsubsection{Declaraciones if ... else }
+\\\\
+Echemos un vistazo a la declaración condicional más común que usarás en JavaScript.
+
+\textbf{— El humilde if ... else statement.}
+
+Una sintaxis básica if...else luce así. pseudocode:
+
+\begin{lstlisting}[language=javascript]
+	if (condición) {
+		código a ejecutar si la condicion es verdadera
+	} else {
+		ejecuta este otro código si la condicion es falsa
+	}
+\end{lstlisting}
+\\
+\textbf{else if}
+\\
+Hay una forma de encadenar  opciones / resultados adicionales extras a if...else — usando else if. Cada opción extra requiere un bloque adicional para poner en medio de bloque if() { ... } y else { ... } 
+
+\subsubsection{Bucles}
+
+Los lenguajes de programación son muy útiles para completar rápidamente tareas repetitivas, desde múltimples cálculos básicos hasta cualquier otra situación en donde tengas un montón de elementos de trabajo similares que completar. Aquí vamos a ver las estructuras de bucles disponibles en JavaScript que pueden manejar tales necesidades.
+
+Los bucles de programación están relacionados con todo lo referente a hacer una misma cosa una y otra vez — que se denomina como iteración en el idioma de programación.
+
+\textbf{El bucle estándar for}
+\\
+Exploremos algunos constructores de bucles específicos. El primero, que usarás la mayoría de las veces, es el bucle for - este tiene la siguiente sintaxis:
+
+\begin{lstlisting}
+for (inicializador; condición de salida; expresión final) {
+	// código a ejecutar
+}
+\end{lstlisting}
+
+Observa un ejemplo real para poder entender esto más claramente.
+
+\begin{lstlisting}
+var cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+var info = 'My cats are called ';
+var para = document.querySelector('p');
+
+for (var i = 0; i < cats.length; i++) {
+	info += cats[i] + ', ';
+}
+
+para.textContent = info;
+\end{lstlisting}
+
+Esto nos da el siguiente resultado:
+
+\begin{lstlisting}
+My cats are called Bill, Jeff, Pete, Biggles, Jasmin,
+\end{lstlisting}
+
+\begin{remark}
+Más información sobre bucles en:
+\url{https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Looping_code}
+\end{remark}
+
+Por los momentos no se continua con la sintaxis de javascript, se explicarán mas conceptos desde el punto de vista de Typescript en la siguiente sección.
 
 
-\subsection{Typescript}
-https://www.typescriptlang.org/cheatsheets
 
+\section{Typescript}
+
+\cite{type} JavaScript (también conocido como ECMAScript) comenzó su vida como un simple lenguaje de secuencias de comandos para navegadores. En el momento en que se inventó, se esperaba que se usara para fragmentos cortos de código incrustados en una página web; escribir más de unas pocas docenas de líneas de código hubiera sido algo inusual. Debido a esto, los primeros navegadores web ejecutaban dicho código con bastante lentitud. Sin embargo, con el tiempo, JS se hizo cada vez más popular y los desarrolladores web comenzaron a usarlo para crear experiencias interactivas.
+
+Los desarrolladores de navegadores web respondieron a este mayor uso de JS optimizando sus motores de ejecución (compilación dinámica) y ampliando lo que se podía hacer con él (agregando API), lo que a su vez hizo que los desarrolladores web lo usaran aún más. En los sitios web modernos, su navegador ejecuta con frecuencia aplicaciones que abarcan cientos de miles de líneas de código. Este es un crecimiento largo y gradual de "la web", comenzando como una simple red de páginas estáticas y evolucionando hacia una plataforma para aplicaciones ricas de todo tipo.
+
+Más que esto, JS se ha vuelto lo suficientemente popular como para usarse fuera del contexto de los navegadores, como implementar servidores JS usando node.js. La naturaleza de "ejecutar en cualquier lugar" de JS lo convierte en una opción atractiva para el desarrollo multiplataforma. ¡ Hay muchos desarrolladores en estos días que usan solo JavaScript para programar toda su pila!
+
+Para resumir, tenemos un lenguaje que fue diseñado para usos rápidos y luego creció hasta convertirse en una herramienta completa para escribir aplicaciones con millones de líneas. Cada idioma tiene sus propias peculiaridades : rarezas y sorpresas, y el humilde comienzo de JavaScript hace que tenga muchas de ellas. Algunos ejemplos:
+
+\begin{itemize}
+	\item El operador de igualdad de JavaScript ( ==) coacciona sus argumentos, lo que genera un comportamiento inesperado:
+	\begin{lstlisting}
+		if ("" == 0) {
+			// It is! But why??
+		}
+	\end{lstlisting}
+	\item JavaScript también permite acceder a propiedades que no están presentes (Preste atención a \textbf{height}):
+	\begin{lstlisting}[language=javascript]
+		const obj = { width: 10, height: 15 };
+		// Why is this NaN? Spelling is hard!
+		const area = obj.width * obj.heigth;
+	\end{lstlisting}
+\end{itemize}
+
+La mayoría de los lenguajes de programación arrojarían un error cuando ocurren este tipo de errores, algunos lo harían durante la compilación, antes de que se ejecute cualquier código. Al escribir programas pequeños, tales peculiaridades son molestas pero manejables; al escribir aplicaciones con cientos o miles de líneas de código, estas sorpresas constantes son un problema grave.
+
+\subsection{TypeScript: un verificador de tipo estático}
+
+Dijimos anteriormente que algunos lenguajes no permitirían que esos programas con errores se ejecutaran en absoluto. La detección de errores en el código sin ejecutarlo se conoce como verificación estática . Determinar qué es un error y qué no en función de los tipos de valores en los que se opera se conoce como verificación de tipos estáticos.
+
+TypeScript verifica un programa en busca de errores antes de la ejecución, y lo hace en función de los tipos de valores , es un verificador de tipo estático . Por ejemplo, el último ejemplo anterior tiene un error debido al tipo de obj. Aquí está el error encontrado por TypeScript:
+
+\begin{lstlisting}[language=typescript]
+	const obj = { width: 10, height: 15 };
+	const area = obj.width * obj.heigth;
+	
+	Property 'heigth' does not exist on type '{ width: number; height: number; }'. Did you mean 'height'?
+\end{lstlisting}
+
+
+
+\subsection{Un superconjunto tipado de JavaScript}
+
+Sin embargo, ¿cómo se relaciona TypeScript con JavaScript?
+
+Sintaxis
+TypeScript es un lenguaje que es un superconjunto de JavaScript: por lo tanto, la sintaxis JS es TS legal. La sintaxis se refiere a la forma en que escribimos texto para formar un programa.
+
+TypeScript no considera ningún código JavaScript como un error debido a su sintaxis. Esto significa que puede tomar cualquier código JavaScript que funcione y ponerlo en un archivo TypeScript sin preocuparse por cómo está escrito exactamente.
+
+\subsection{Tipos}
+
+TypeScript es un superconjunto tipado , lo que significa que agrega reglas sobre cómo se pueden usar diferentes tipos de valores. El error anterior acerca de obj.heigthno fue un error de sintaxis : es un error de usar algún tipo de valor (un tipo ) de manera incorrecta.
+
+En términos generales, una vez que el compilador de TypeScript termina de verificar su código, borra los tipos para producir el código "compilado" resultante. Esto significa que una vez que se compila su código, el código JS simple resultante no tiene información de tipo.
+
+Esto también significa que TypeScript nunca cambia el comportamiento de su programa en función de los tipos que infiere. La conclusión es que, si bien es posible que vea errores de tipo durante la compilación, el sistema de tipo en sí no influye en cómo funciona su programa cuando se ejecuta.
+
+Finalmente, TypeScript no proporciona ninguna biblioteca de tiempo de ejecución adicional. Sus programas utilizarán la misma biblioteca estándar (o bibliotecas externas) que los programas de JavaScript, por lo que no hay un marco adicional específico de TypeScript para aprender.
+
+\subsubsection{Primitivos}
+
+JavaScript tiene tres primitivas muy utilizadas: string, number, y boolean. Cada una tiene un tipo correspondiente en TypeScript. Como es de esperar, estos son los mismos nombres que verías si usaras el operador typeof de JavaScript en un valor de esos tipos:
+
+\begin{itemize}
+	\item string representa valores de cadena como "Hola, mundo".
+	\item number es para números como 42. JavaScript no tiene un valor especial en tiempo de ejecución para los enteros, así que no hay equivalente a int o float - todo es simplemente número.
+	\item boolean es para los dos valores true y false.
+\end{itemize}
+
+
+\subsubsection{Arreglos}
+
+Para especificar el tipo de un array como [1, 2, 3], puedes utilizar la sintaxis número[]; esta sintaxis funciona para cualquier tipo (por ejemplo, cadena[] es un array de cadenas, y así sucesivamente). También puedes ver esto escrito como Array<número>, que significa lo mismo.
+
+\subsubsection{any}
+
+TypeScript también tiene un tipo especial, any, que puedes usar siempre que no quieras que un valor particular cause errores de comprobación de tipos.
+
+Cuando un valor es de tipo any, puedes acceder a sus propiedades (que a su vez serán de tipo any), llamarlo como una función, asignarlo a (o desde) un valor de cualquier tipo, o cualquier otra cosa que sea sintácticamente legal.
+
+Para mayor información sobre typescript leer los siguientes apartados de documentación oficial:
+\url{https://www.typescriptlang.org/docs/handbook/2/everyday-types.html}
+\url{https://www.typescriptlang.org/docs/handbook/2/functions.html}
+\url{https://www.typescriptlang.org/docs/handbook/2/objects.html}
+\url{https://www.typescriptlang.org/docs/handbook/2/classes.html}
+
+A continuación algunas hojas de trucos
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{TypeScriptInterfaces.png}
+	\caption{Interfases}
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{TypeScriptClasses.png}
+	\caption{Clases}
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{TypeScriptTypes.png}
+	\caption{Tipos}
+\end{figure}
+
+\url{https://www.typescriptlang.org/cheatsheets}
 
 \subsection{Frameworks}
 
@@ -1366,7 +1561,7 @@ Ofrecemos aquí algunas descripciones generales, de alto nivel, que reflejan el 
 Se entiende por localización la adaptación de un producto, una aplicación o el contenido de un documento con el fin de adecuarlos a las necesidades (lingüísticas, culturales u otras) de un mercado destinatario concreto (una "localidad" o "local" [locale]).
 
 \begin{remark}
-La palabra localización a veces se escribe "l10n", donde 10 es la cantidad de letras entre la ele y la ene.
+	La palabra localización a veces se escribe "l10n", donde 10 es la cantidad de letras entre la ele y la ene.
 \end{remark}
 
 
@@ -1408,5 +1603,3 @@ Obsérvese que esta lista no incluye necesariamente la localización del conteni
 La internacionalización influye considerablemente en la facilidad de localización del producto. Obviamente, resulta mucho más difícil y demanda mucho más tiempo adaptar retrospectivamente un producto centrado en un idioma y cultura particulares que diseñarlo desde un primer momento con la intención de presentarlo mundialmente. (Piénsese en el Y2K y todo lo que demandó tratar de "deshacer" la opción por campos de fecha de dos caracteres, basada en el supuesto de que se interpretarían siempre como "19xx").
 
 De modo que, en condiciones ideales, la internacionalización se da como un paso fundamental en el proceso de diseño y desarrollo, más que como un agregado posterior que, a menudo, puede implicar un difícil y costoso proceso de reingeniería.
-.
-
