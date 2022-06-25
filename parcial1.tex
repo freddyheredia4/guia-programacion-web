@@ -53,7 +53,38 @@ inventario, a través de una página web.
 \end{remark}
 
 
-\subsection{Protocolos de internet} \index{Protocolos de internet}
+\section{Gestor de contenidos}
+
+\cite{mdn}Un sistema de gestión de contenidos o CMS es un programa informático que permite a los usuarios publicar, organizar, cambiar o eliminar diferentes tipos de contenido como texto, imágenes incrustadas, vídeo, audio y código interactivo.
+
+\cite{wiki}Cuenta con una interfaz que controla una o varias bases de datos donde se aloja el contenido del sitio web. El sistema permite manejar de manera independiente el contenido y el diseño. Así, es posible manejar el contenido y darle en cualquier momento un diseño distinto al sitio web sin tener que darle formato al contenido de nuevo, además de permitir la fácil y controlada publicación en el sitio a varios editores. Un ejemplo clásico es el de editores que cargan el contenido al sistema y otro de nivel superior (moderador o administrador) que permite que estos contenidos sean visibles a todo el público (los aprueba).
+
+\subsection{Características de un CMS}
+Los sistemas de gestión de contenidos se definen por las siguientes particularidades, muchas de las cuales son, a su vez, grandes ventajas:
+
+\begin{itemize}
+	\item Uso intuitivo y fácil para simplificar la edición y publicación de contenidos. No se requieren conocimientos de programación.
+	\item Configuración flexible y personalizada a través de múltiples opciones.
+	\item Velocidad y rendimiento elevados gracias a su excelente capacidad para el desarrollo de tareas.
+	\item Seguridad presente gracias a opciones como aprobación de contenido, verificación de correo electrónico, historial de login o registro de auditoría, entre otras.
+	\item Medios de soporte para ayudar a los usuarios a la resolución de dudas y problemas.
+\end{itemize}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=1\textwidth]{cms1.png}
+	\caption{Algunos sistemas gestores de contenido}
+	\label{fig:super}
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[width=0.7\textwidth]{cms2.png}
+	\caption{Otros sistemas gestores de contenido populares}
+	\label{fig:super}
+\end{figure}
+
+\section{Protocolos de internet} \index{Protocolos de internet}
 El éxito de Internet se basa mucho en el empleo de TCP/IP, el conjunto de protocolos de comunicación que permiten el intercambio de información de forma independiente de los sistemas en que ésta se encuentra almacenada. TCP/IP constituye
 la solución problema de heterogeneidad de los sistemas informáticos. El 1 de enero de
 1983, TCP/IP se estableció como el protocolo estándar de comunicación en Internet.
@@ -74,10 +105,6 @@ reservado que no puede emplear ningún otro protocolo.
 	\caption{Comparativa TCP - UDP}
 	\label{fig:super}
 \end{figure}
-
-
-En el siguiente cuadro se muestran los protocolos del nivel 7 más comunes de Internet
-junto con el número de puerto que emplean.
 
 \cite{osi}En la siguiente imagen se muestran las capas del modelo OSI:
 
@@ -101,18 +128,18 @@ arquitecturas cliente/servidor.
 
 Cliente/servidor es una arquitectura de red
 en la que cada ordenador o proceso en
-la red es cliente o servidor
+la red es \textbf{cliente o servidor}
 . Normalmente, los servidores son ordenadores potentes
 dedicados a gestionar unidades de disco (servidor de ficheros), impresoras (servidor de impresoras), tráco de red (servidor de red), datos (servidor de bases de datos) o
 incluso aplicaciones (servidor de aplicaciones), mientras que los clientes son máquinas
 menos potentes y usan los recursos que ofrecen los servidores.
 
-Esta arquitectura implica la existencia de una relación entre procesos que solicitan
-servicios (clientes) y procesos que responden a estos servicios (servidores). Estos
+Esta arquitectura implica la existencia de una relación entre procesos que \textbf{solicitan}
+servicios (clientes) y procesos que \textbf{responden} a estos servicios (servidores). Estos
 dos tipos de procesos pueden ejecutarse en el mismo procesador o en distintos.
 
 La arquitectura cliente/servidor permite la creación de aplicaciones distribuidas.
-La principal ventaja de esta arquitectura es que facilita la separación de las funciones
+La principal ventaja de esta arquitectura es que facilita la \textbf{separación de las funciones}
 según su servicio, permitiendo situar cada función en la plataforma más adecuada
 para su ejecución. Además, también presenta las siguientes ventajas:
 
@@ -168,19 +195,19 @@ los datos y asegurar la integridad de los datos.
 \end{figure}
 
 \subsection{El cliente}
-\cite{mdn}El cliente es cualquier herramienta que actué en representación del usuario para solicitar a
+\cite{mdn}El cliente es cualquier herramienta que actué en \textbf{representación del usuario} para solicitar a
 un servidor web el envío de los recursos que desea obtener mediante HTTP. Esta función es realizada en la mayor parte de los casos por un navegador Web. Hay excepciones, como el caso de programas específicamente usados por desarrolladores para desarrollar y depurar sus aplicaciones. 
 
 El navegador es siempre el que inicia una comunicación (petición), y el servidor nunca la comienza (hay algunos mecanismos que permiten esto, pero no son muy habituales).  
 
-Para poder mostrar una página Web, el navegador envía una petición de documento HTML al servidor. Entonces procesa este documento, y envía más peticiones para solicitar scripts, hojas de estilo (CSS), y otros datos que necesite (normalmente vídeos y/o imágenes). El navegador, une todos estos documentos y datos, y compone el resultado final: la página Web. Los scripts, los ejecuta también el navegador, y también pueden generar más peticiones de datos en el tiempo, y el navegador, gestionará y actualizará la página Web en consecuencia. 
+Para poder mostrar una página Web, el navegador envía una \textbf{petición} de documento HTML al servidor. Entonces \textbf{procesa} este documento, y envía más peticiones para solicitar \textbf{scripts, hojas de estilo (CSS)}, y otros datos que necesite (normalmente vídeos y/o imágenes). El navegador, une todos estos documentos y datos, y compone el resultado final: la página Web. Los scripts, los ejecuta también el navegador, y también \textbf{pueden generar más peticiones} de datos en el tiempo, y el navegador, gestionará y actualizará la página Web en consecuencia. 
 
-Una página Web, es un documento de hipertexto (HTTP), luego habrá partes del texto en la página que puedan ser enlaces (links) que pueden ser activados (normalmente al hacer click sobre ellos) para hacer una petición de una nueva página Web, permitiendo así dirigir su agente de usuario y navegar por la Web. El navegador, traduce esas direcciones en peticiones de HTTP, e interpretara y procesará las respuestas HTTP, para presentar al usuario la página Web que desea.
+Una página Web, es un documento de hipertexto (HTTP), luego habrá partes del texto en la página que puedan ser enlaces \textbf{(links)} que pueden ser activados (normalmente al hacer click sobre ellos) para hacer una petición de una nueva página Web, permitiendo así \textbf{dirigir} su agente de usuario y navegar por la Web. El navegador, traduce esas direcciones en peticiones de HTTP, e interpretara y procesará las respuestas HTTP, para presentar al usuario la página Web que desea.
 
 La parte cliente de las aplicaciones web suele estar formada por el código HTML
 que forma la página web más algo de código ejecutable realizado en lenguaje de script
 del navegador (JavaScript o VBScript) o mediante pequeños programas (applets) realizados en Java. También se solían emplear plugins que permiten visualizar otros
-contenidos multimedia (como Macromedia Flash
+contenidos multimedia (como \textbf{Macromedia Flash}
 ), aunque no se encuentran tan extendidos como las tecnologías anteriores y plantean problemas de incompatibilidad
 entre distintas plataformas. Por tanto, la misión del cliente web es interpretar las
 páginas HTML y los diferentes recursos que contienen (imágenes, sonidos, etc.).
@@ -266,7 +293,7 @@ ordenadores. HTTP se sitúa en el nivel 7 (aplicación) del modelo OSI.
 
 \section{HTTP/HTTPS}
 
-\cite{mdn}Hypertext Transfer Protocol (HTTP) (o Protocolo de Transferencia de Hipertexto en español) es un protocolo de la capa de aplicación para la transmisión de documentos hipermedia, como HTML. Fue diseñado para la comunicación entre los navegadores y servidores web, aunque puede ser utilizado para otros propósitos también. Sigue el clásico modelo cliente-servidor, en el que un cliente establece una conexión, realizando una petición a un servidor y espera una respuesta del mismo. Se trata de un protocolo sin estado, lo que significa que el servidor no guarda ningún dato (estado) entre dos peticiones. Aunque en la mayoría de casos se basa en una conexión del tipo TCP/IP, puede ser usado sobre cualquier capa de transporte segura o de confianza, es decir, sobre cualquier protocolo que no pierda mensajes silenciosamente, tal como UDP.
+\cite{mdn}Hypertext Transfer Protocol (HTTP) (o Protocolo de Transferencia de Hipertexto en español) es un protocolo de la capa de aplicación para la \textbf{transmisión} de documentos hipermedia, como \textbf{HTML}. Fue diseñado para la comunicación entre los navegadores y servidores web, aunque puede ser utilizado para otros propósitos también. Sigue el clásico modelo cliente-servidor, en el que un cliente establece una conexión, realizando una petición a un servidor y espera una respuesta del mismo. Se trata de un protocolo \textbf{sin estado}, lo que significa que el servidor \textbf{no guarda} ningún \textbf{dato} (estado) \textbf{entre dos peticiones}. Aunque en la mayoría de casos se basa en una conexión del tipo TCP/IP, puede ser usado sobre cualquier capa de transporte segura o de confianza, es decir, sobre cualquier protocolo que no pierda mensajes silenciosamente, tal como UDP.
 
 Clientes y servidores se comunican intercambiando mensajes individuales (en contraposición a las comunicaciones que utilizan flujos continuos de datos). Los mensajes que envía el cliente, normalmente un navegador Web, se llaman peticiones, y los mensajes enviados por el servidor se llaman respuestas.
 
@@ -588,27 +615,27 @@ El DOM surgió a partir de la implementación de JavaScript en los navegadores. 
 
 \section{REST}
 
-\cite{mdn}El término "Transferencia de Estado Representacional" (REST) representa un conjunto de características de diseño de arquitecturas software que aportan confiabilidad, eficiencia y escalibilidad a los sistemas distribuidos. Un sistema es llamado RESTful cuando se ajusta a estas características.
+\cite{mdn}El término "Transferencia de Estado Representacional" (REST) representa un \textbf{conjunto de características} de diseño de arquitecturas software que aportan confiabilidad, eficiencia y escalibilidad a los sistemas distribuidos. Un sistema es llamado RESTful cuando se ajusta a estas características.
 
-La idea básica de REST es que un recurso, e.j. un documento, es transferido con su estado y su relaciones (hipertexto) mediante formatos y operaciones estandarizadas bien definidas.
+La idea básica de REST es que un \textbf{recurso}, e.j. un documento, \textbf{es transferido con su estado y su relaciones (hipertexto)} mediante formatos y operaciones estandarizadas bien definidas.
 
-Como HTTP, el protocolo estandar de la Web, también transfiere documentos e hipertexto, las APIs HTTP a veces son llamadas APIs RESTful, servicios RESTful, o simplemente servicios REST, aunque no se ajusten del todo a la deficinición de REST. Los principiantes pueden pensar que una API REST es un servicio HTTP que puede ser llamado mediante librerias y herramientas web estandar.
+Como HTTP, el protocolo estandar de la Web, también transfiere documentos e hipertexto, las APIs HTTP a veces son llamadas\textbf{ APIs RESTful}, servicios RESTful, o simplemente servicios REST, aunque no se ajusten del todo a la deficinición de REST. Los principiantes pueden pensar que una API REST es un servicio HTTP que puede ser llamado mediante librerias y herramientas web estandar.
 
 \cite{redhat}REST no es un protocolo ni un estándar, sino más bien un conjunto de límites de arquitectura. Los desarrolladores de las API pueden implementarlo de distintas maneras.
 
-Cuando el cliente envía una solicitud a través de una API de RESTful, esta transfiere una representación del estado del recurso requerido a quien lo haya solicitado o al extremo. La información se entrega por medio de HTTP en uno de estos formatos: JSON (JavaScript Object Notation), HTML, XLT, Python, PHP o texto sin formato. JSON es el lenguaje de programación más popular, ya que tanto las máquinas como las personas lo pueden comprender y no depende de ningún lenguaje, a pesar de que su nombre indique lo contrario. 
+Cuando el cliente envía una solicitud a través de una API de RESTful, esta transfiere una representación del estado del recurso requerido a quien lo haya solicitado o al extremo. La información se entrega por medio de HTTP en uno de estos formatos: \textbf{JSON} (JavaScript Object Notation), HTML, XLT, Python, PHP o texto sin formato. JSON es el lenguaje de programación más popular, ya que tanto las máquinas como las personas lo pueden comprender y no depende de ningún lenguaje, a pesar de que su nombre indique lo contrario. 
 
-También es necesario tener en cuenta otros aspectos. Los encabezados y los parámetros también son importantes en los métodos HTTP de una solicitud HTTP de la API de RESTful, ya que contienen información de identificación importante con respecto a los metadatos, la autorización, el identificador uniforme de recursos (URI), el almacenamiento en caché, las cookies y otros elementos de la solicitud. Hay encabezados de solicitud y de respuesta, pero cada uno tiene sus propios códigos de estado e información de conexión HTTP.
+También es necesario tener en cuenta otros aspectos. Los encabezados y los parámetros también son importantes en los métodos HTTP de una solicitud HTTP de la API de RESTful, ya que contienen información de identificación importante con respecto a los metadatos, la autorización, el identificador uniforme de recursos (URI), el almacenamiento en caché, las cookies y otros elementos de la solicitud. Hay encabezados de solicitud y de respuesta, pero cada uno tiene sus propios códigos de estado e información de conexión \textbf{HTTP.}
 
 Para que una API se considere de RESTful, debe cumplir los siguientes criterios:
 
 \begin{itemize}
-	\item Arquitectura cliente-servidor compuesta de clientes, servidores y recursos, con la gestión de solicitudes a través de HTTP.
-	\item Comunicación entre el cliente y el servidor sin estado, lo cual implica que no se almacena la información del cliente entre las solicitudes de GET y que cada una de ellas es independiente y está desconectada del resto.
-	\item Datos que pueden almacenarse en caché y optimizan las interacciones entre el cliente y el servidor.
-	\item Una interfaz uniforme entre los elementos, para que la información se transfiera de forma estandarizada.
-	\item Un sistema en capas que organiza en jerarquías invisibles para el cliente cada uno de los servidores (los encargados de la seguridad, del equilibrio de carga, etc.) que participan en la recuperación de la información solicitada.
-	\item Código disponible según se solicite (opcional), es decir, la capacidad para enviar códigos ejecutables del servidor al cliente cuando se requiera, lo cual amplía las funciones del cliente. 
+	\item Arquitectura \textbf{cliente-servidor} compuesta de clientes, servidores y recursos, con la gestión de solicitudes a través de HTTP.
+	\item Comunicación entre el cliente y el servidor \textbf{sin estado}, lo cual implica que no se almacena la información del cliente entre las solicitudes de GET y que cada una de ellas es independiente y está desconectada del resto.
+	\item Datos que pueden almacenarse en \textbf{caché} y optimizan las interacciones entre el cliente y el servidor.
+	\item Una \textbf{interfaz uniforme} entre los elementos (métodos http, uri, json-xml), para que la información se transfiera de forma estandarizada.
+	\item Un \textbf{sistema en capas} que organiza en jerarquías invisibles para el cliente cada uno de los servidores (los encargados de la seguridad, del equilibrio de carga, etc.) que participan en la recuperación de la información solicitada.
+	\item Código disponible según se solicite (opcional), es decir, la capacidad para enviar \textbf{códigos ejecutables del servidor al cliente} cuando se requiera, lo cual amplía las funciones del cliente. 
 \end{itemize}
 
 \begin{figure}[H]
@@ -618,39 +645,7 @@ Para que una API se considere de RESTful, debe cumplir los siguientes criterios:
 	\label{fig:super}
 \end{figure}
 
-REST es un conjunto de pautas que pueden implementarse según sea necesario. Por esta razón, las API de REST son más rápidas y ligeras, cuentan con mayor capacidad de ajuste y, por ende, resultan ideales para el Internet de las cosas (IoT) y el desarrollo de aplicaciones para dispositivos móviles. 
-
-
-\section{Gestor de contenidos}
-
-\cite{mdn}Un sistema de gestión de contenidos o CMS es un programa informático que permite a los usuarios publicar, organizar, cambiar o eliminar diferentes tipos de contenido como texto, imágenes incrustadas, vídeo, audio y código interactivo.
-
-\cite{wiki}Cuenta con una interfaz que controla una o varias bases de datos donde se aloja el contenido del sitio web. El sistema permite manejar de manera independiente el contenido y el diseño. Así, es posible manejar el contenido y darle en cualquier momento un diseño distinto al sitio web sin tener que darle formato al contenido de nuevo, además de permitir la fácil y controlada publicación en el sitio a varios editores. Un ejemplo clásico es el de editores que cargan el contenido al sistema y otro de nivel superior (moderador o administrador) que permite que estos contenidos sean visibles a todo el público (los aprueba).
-
-\subsection{Características de un CMS}
-Los sistemas de gestión de contenidos se definen por las siguientes particularidades, muchas de las cuales son, a su vez, grandes ventajas:
-
-\begin{itemize}
-	\item Uso intuitivo y fácil para simplificar la edición y publicación de contenidos. No se requieren conocimientos de programación.
-	\item Configuración flexible y personalizada a través de múltiples opciones.
-	\item Velocidad y rendimiento elevados gracias a su excelente capacidad para el desarrollo de tareas.
-	\item Seguridad presente gracias a opciones como aprobación de contenido, verificación de correo electrónico, historial de login o registro de auditoría, entre otras.
-	\item Medios de soporte para ayudar a los usuarios a la resolución de dudas y problemas.
-\end{itemize}
-
-\begin{figure}[H]
-	\center
-	\includegraphics[width=1\textwidth]{cms1.png}
-	\caption{Algunos sistemas gestores de contenido}
-	\label{fig:super}
-\end{figure}
-
-\begin{figure}[H]
-	\center
-	\includegraphics[width=0.7\textwidth]{cms2.png}
-	\caption{Otros sistemas gestores de contenido populares}
-	\label{fig:super}
-\end{figure}
+REST es un conjunto de pautas que pueden implementarse \textbf{según sea necesario}. Por esta razón, las API de REST son más rápidas y ligeras, cuentan con mayor capacidad de ajuste y, por ende, resultan ideales para el Internet de las cosas (IoT) y el desarrollo de aplicaciones para dispositivos móviles. 
 
 \section{HTML}
 
